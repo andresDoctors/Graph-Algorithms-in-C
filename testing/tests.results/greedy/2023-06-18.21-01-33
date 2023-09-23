@@ -1,0 +1,390 @@
+A_1515153016_18:
+    natural_order:6
+
+    executed 3000 random order tests in
+    wall-time seconds: 47.000000
+    cpu-time  seconds: 46.613000
+
+    Chi == 6 : 3000 times
+
+    local minimum: 6 at try 1
+
+Done!
+
+A7H4H_18:
+    natural_order:6
+
+    executed 3000 random order tests in
+    wall-time seconds: 11.000000
+    cpu-time  seconds: 10.898000
+
+    Chi == 6 : 3000 times
+
+    local minimum: 6 at try 1
+
+Done!
+
+bxb777_999_12:
+    natural_order:5
+
+    executed 3000 random order tests in
+    wall-time seconds: 519.000000
+    cpu-time  seconds: 519.309000
+
+    Chi == 5 : 3000 times
+
+    local minimum: 5 at try 1
+
+Done!
+
+BxB1100_999_54_2017:
+    natural_order:5
+
+    executed 3000 random order tests in
+    wall-time seconds: 872.000000
+    cpu-time  seconds: 872.835000
+
+    Chi == 5 : 3000 times
+
+    local minimum: 5 at try 1
+
+Done!
+
+CBQsc100_200_11_1517:
+    natural_order:42
+
+    executed 3000 random order tests in
+    wall-time seconds: 1.000000
+    cpu-time  seconds: 1.077000
+
+    Chi == 42 : 3000 times
+
+    local minimum: 42 at try 1
+
+Done!
+
+Gf12345_12111222_457_15:
+    natural_order:600
+
+    executed 3000 random order tests in
+    wall-time seconds: 600.000000
+    cpu-time  seconds: 599.270000
+
+    Chi == 600 : 3000 times
+
+    local minimum: 600 at try 1
+
+Done!
+
+GRD99704280:
+    natural_order:6
+
+    executed 3000 random order tests in
+    wall-time seconds: 452.000000
+    cpu-time  seconds: 452.248000
+
+    Chi == 6 : 3000 times
+
+    local minimum: 6 at try 1
+
+Done!
+
+GRD505041100:
+    natural_order:6
+
+    executed 3000 random order tests in
+    wall-time seconds: 161.000000
+    cpu-time  seconds: 161.289000
+
+    Chi == 6 : 3000 times
+
+    local minimum: 6 at try 1
+
+Done!
+
+GRD22154753987:
+    natural_order:5
+
+    executed 3000 random order tests in
+    wall-time seconds: 0.000000
+    cpu-time  seconds: 0.166000
+
+    Chi == 5 : 3000 times
+
+    local minimum: 5 at try 1
+
+Done!
+
+lux4:
+    natural_order:1500
+
+    executed 3000 random order tests in
+    wall-time seconds: 42.000000
+    cpu-time  seconds: 42.282000
+
+    Chi == 1500 : 3000 times
+
+    local minimum: 1500 at try 1
+
+Done!
+
+R1789_875431_10:
+    natural_order:587
+
+    executed 3000 random order tests in
+    wall-time seconds: 18.000000
+    cpu-time  seconds: 18.453000
+
+    Chi == 587 : 3000 times
+
+    local minimum: 587 at try 1
+
+Done!
+
+R1999999_10123123_1:
+    natural_order:7
+
+    executed 3000 random order tests in
+    wall-time seconds: 174.000000
+    cpu-time  seconds: 174.274000
+
+    Chi == 7 : 3000 times
+
+    local minimum: 7 at try 1
+
+Done!
+
+school1.col:
+    natural_order:42
+
+    executed 3000 random order tests in
+    wall-time seconds: 0.000000
+    cpu-time  seconds: 0.092000
+
+    Chi == 42 : 3000 times
+
+    local minimum: 42 at try 1
+
+Done!
+
+q10.corr:
+    natural_order:16
+
+    executed 3000 random order tests in
+    wall-time seconds: 0.000000
+    cpu-time  seconds: 0.010000
+
+    Chi == 16 : 3000 times
+
+    local minimum: 16 at try 1
+
+Done!
+
+q13.corr:
+    natural_order:21
+
+    executed 3000 random order tests in
+    wall-time seconds: 0.000000
+    cpu-time  seconds: 0.020000
+
+    Chi == 21 : 3000 times
+
+    local minimum: 21 at try 1
+
+Done!
+
+A1H75_18.txt:
+    natural_order:6
+
+    executed 3000 random order tests in
+    wall-time seconds: 0.000000
+    cpu-time  seconds: 0.092000
+
+    Chi == 6 : 3000 times
+
+    local minimum: 6 at try 1
+
+Done!
+
+bxb15_22_10.txt:
+    natural_order:5
+
+    executed 3000 random order tests in
+    wall-time seconds: 0.000000
+    cpu-time  seconds: 0.020000
+
+    Chi == 5 : 3000 times
+
+    local minimum: 5 at try 1
+
+Done!
+
+C1599_1777.txt:
+    natural_order:3
+
+    executed 3000 random order tests in
+    wall-time seconds: 0.000000
+    cpu-time  seconds: 0.015000
+
+    Chi == 3 : 3000 times
+
+    local minimum: 3 at try 1
+
+Done!
+
+CBQsv10_22_61.txt:
+    natural_order:77
+
+    executed 3000 random order tests in
+    wall-time seconds: 8.000000
+    cpu-time  seconds: 8.277000
+
+    Chi == 77 : 3000 times
+
+    local minimum: 77 at try 1
+
+Done!
+
+CBQsv1000_77_150.txt:
+    natural_order:173
+
+    executed 3000 random order tests in
+    wall-time seconds: 156.000000
+    cpu-time  seconds: 156.121000
+
+    Chi == 173 : 3000 times
+
+    local minimum: 173 at try 1
+
+Done!
+
+Cne140_4.txt:
+    natural_order:3
+
+    executed 3000 random order tests in
+    wall-time seconds: 0.000000
+    cpu-time  seconds: 0.001000
+
+    Chi == 3 : 3000 times
+
+    local minimum: 3 at try 1
+
+Done!
+
+DG100.txt:
+    natural_order:6
+
+    executed 3000 random order tests in
+    wall-time seconds: 1.000000
+    cpu-time  seconds: 1.201000
+
+    Chi == 6 : 3000 times
+
+    local minimum: 6 at try 1
+
+Done!
+
+KC.txt:
+    natural_order:100
+
+    executed 3000 random order tests in
+    wall-time seconds: 0.000000
+    cpu-time  seconds: 0.046000
+
+    Chi == 100 : 3000 times
+
+    local minimum: 100 at try 1
+
+Done!
+
+KD.txt:
+    natural_order:500
+
+    executed 3000 random order tests in
+    wall-time seconds: 2.000000
+    cpu-time  seconds: 1.340000
+
+    Chi == 500 : 3000 times
+
+    local minimum: 500 at try 1
+
+Done!
+
+KM.txt:
+    natural_order:1000
+
+    executed 3000 random order tests in
+    wall-time seconds: 12.000000
+    cpu-time  seconds: 11.551000
+
+    Chi == 1000 : 3000 times
+
+    local minimum: 1000 at try 1
+
+Done!
+
+lux1.txt:
+    natural_order:131
+
+    executed 3000 random order tests in
+    wall-time seconds: 0.000000
+    cpu-time  seconds: 0.082000
+
+    Chi == 131 : 3000 times
+
+    local minimum: 131 at try 1
+
+Done!
+
+lux2.txt:
+    natural_order:25
+
+    executed 3000 random order tests in
+    wall-time seconds: 0.000000
+    cpu-time  seconds: 0.003000
+
+    Chi == 25 : 3000 times
+
+    local minimum: 25 at try 1
+
+Done!
+
+Octo.txt:
+    natural_order:339
+
+    executed 3000 random order tests in
+    wall-time seconds: 78.000000
+    cpu-time  seconds: 78.693000
+
+    Chi == 339 : 3000 times
+
+    local minimum: 339 at try 1
+
+Done!
+
+PG64.txt:
+    natural_order:6
+
+    executed 3000 random order tests in
+    wall-time seconds: 2.000000
+    cpu-time  seconds: 1.125000
+
+    Chi == 6 : 3000 times
+
+    local minimum: 6 at try 1
+
+Done!
+
+R22_99_15.txt:
+    natural_order:7
+
+    executed 3000 random order tests in
+    wall-time seconds: 0.000000
+    cpu-time  seconds: 0.000000
+
+    Chi == 7 : 3000 times
+
+    local minimum: 7 at try 1
+
+Done!
+

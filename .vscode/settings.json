@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "vertex.h": "c",
+        "dict.h": "c",
+        "graph_io.h": "c",
+        "greedy.h": "c",
+        "string.h": "c"
+    }
+}

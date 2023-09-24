@@ -1,0 +1,33 @@
+CC = gcc
+CFLAGS = -Wall -Wextra -std=c99
+
+SRC_FILES = src\graph.algorithms\algorithms.dependencies\order.c
+SRC_FILES += src\graph.algorithms\algorithms.dependencies\random.c
+SRC_FILES += src\graph.algorithms\bipartite.c
+SRC_FILES += src\graph.algorithms\greedy.c
+SRC_FILES += src\graph.helpers\data_structures\dict.c
+SRC_FILES += src\graph.helpers\data_structures\stack.c
+SRC_FILES += src\graph.helpers\graph_io.c
+SRC_FILES += src\graph.helpers\graph_sort.c
+SRC_FILES += src\graph.helpers\vertex.c
+SRC_FILES += src\graph.c
+SRC_FILES += testing\tests\test_bipartite.c
+SRC_FILES += testing\tests\test_gcc_rand.c
+SRC_FILES += testing\tests\test_greedy.c
+SRC_FILES += testing\tests\test_rand2.c
+SRC_FILES += testing\tests\test_welsh_powell.c
+SRC_FILES += types\names.c
+SRC_FILES += testing\tests_run.c
+SRC_FILES += testing\tests.helpers\graph_metadata.c
+SRC_FILES += testing\tests.helpers\tests.algorithms\kahan_sum.c
+
+
+# The name of the output executable
+EXECUTABLE_NAME = executable
+
+# Default target: build the executable
+all: $(EXECUTABLE_NAME)
+
+# Rule to build the executable
+$(EXECUTABLE_NAME): $(SRC_FILES)
+	$(CC) $(CFLAGS) $(SRC_FILES) -o $(EXECUTABLE_NAME)

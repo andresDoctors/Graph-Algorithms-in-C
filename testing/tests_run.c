@@ -23,7 +23,7 @@ void run_single_tests() {
     char path[256];
     char str_time[32];
 
-    single_test_t tests[2] = { test_gcc_rand, test_rand2, };
+    single_test_t tests[2] = { c_rand_statistical_test, test_rand2, };
     char test_names[2][32] = { "gcc_rand/", "rand2/", };
 
     for(i32 i = 0; i < 2; i++) {

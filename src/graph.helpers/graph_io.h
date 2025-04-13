@@ -3,10 +3,9 @@
 
 
 #include <stdio.h>
-#include "vertex.h"
 
 
-Vertex* scan_graph(FILE* file_in, i32* p_V, i32* p_E);
+i32* scan_graph(FILE* STREAM, i32* ptr_nvertices, i32* ptr_nedges);
 
 
 #endif

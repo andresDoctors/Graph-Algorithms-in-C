@@ -16,7 +16,7 @@ typedef void (*multiple_test_t)(FILE*, FILE*, char*);
 
 
 // single tests
-void test_gcc_rand(FILE* file_out);
+void c_rand_statistical_test(FILE* file_out);
 void test_rand2   (FILE* file_out);
 
 // multiple tests single output

@@ -1,48 +1,89 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 
-#include "graph_io.h"
-#include "data_structures/dict.h"
+#include "primitives.h"
 
 
-static void xfscanf(FILE* file, char* format,
-                    name_address_t p_name1, name_address_t p_name2) {
+static void ignore_comment_lines(FILE* STREAM) {
+    assert(STREAM);
+    char line[1024];
 
-    i32 k = fscanf(file, format, p_name1, p_name2);
-    if(k != 2 || *p_name1 < 0 || *p_name2 < 0)
-        exit(-1);
+    do {
+        char* error1 = fgets(line, sizeof(line), STREAM);
+        assert(!error1);
+    } while(line[0] == 'c');
+    
+    i32 error2 = fseek(STREAM, -strlen(line), SEEK_CUR);
+
+    assert(!error2);
+    assert(line[0] == 'p');
 }
 
-static Vertex* scan_vertices(FILE* file, i32 V, i32 E) {
+static void scan_order_and_size(FILE* STREAM, i32* ptr_nvertices, i32* ptr_nedges) {
+    assert(STREAM);
+    assert(ptr_nvertices);
+    assert(ptr_nedges);
 
-    Vertex* vertices = calloc(V, sizeof(Vertex));
-    dict_t dict = dict_new(2*V);
+    const char TEMPLATE[] = "p " i32_SCN " " i32_SCN;
+    i32 nassignments = fscanf(STREAM, TEMPLATE, ptr_nvertices, ptr_nedges);
 
-    for(i32 i = 0; i < E; i++) {
+    assert(nassignments == 2);
+}
 
-        name_declare_tmp(name1);
-        name_declare_tmp(name2);
+static void scan_edges(FILE* STREAM, i32* edges, i32 nedges) {
+    assert(STREAM);
+    assert(edges);
+    assert(nedges > 0);
 
-        xfscanf(file, "\ne %" SCNNAME " %" SCNNAME,
-            name_address(name1), name_address(name2));
+    for(i32 i = 0; i < nedges; i++) {
+        i32 name1, name2, nassignments;
+        const char TEMPLATE[] = "e " i32_SCN " " i32_SCN;
 
-        i32 idx1 = dict_get_idx(dict, name1);
-        i32 idx2 = dict_get_idx(dict, name2);
+        nassignments = fscanf(STREAM, TEMPLATE, &name1, &name2);
+        assert(nassignments == 2);
 
-        vertices_add(idx1, name1, idx2, name2, vertices);
+        edges[2*i]     = name1;
+        edges[2*i + 1] = name2;
+    }
+}
+
+static void sort_edges(i32* edges, i32 nedges) {
+    assert(edges);
+    assert(nedges > 0);
+
+    int edge_cmp(const void* _EDGE1_, const void * _EDGE2_) {
+        i32* EDGE1 = (i32*) _EDGE1_;
+        i32* EDGE2 = (i32*) _EDGE2_;
+
+        i32 v1 = EDGE1[0], v2 = EDGE2[0];
+        if(v1 == v2) {
+            v1 = EDGE1[1], v2 = EDGE2[1];
+        }
+    
+        return (v1 > v2) - (v1 < v2);
     }
 
-    dict_destroy(dict);
-
-    return vertices;
+    qsort(edges, nedges, 2*sizeof(i32), edge_cmp);
 }
 
-Vertex* scan_graph(FILE* file_in, i32* p_V, i32* p_E) {
+i32* scan_graph(FILE* STREAM, i32* ptr_nvertices, i32* ptr_nedges) {
+    assert(STREAM);
+    assert(ptr_nvertices);
+    assert(ptr_nedges);
 
-    char line[1024];
-    do { (void) fgets(line, 1024, file_in); }
-        while(line[0] != 'p');
-    sscanf(line, "p edge %" SCNi32 " %" SCNi32, p_V, p_E);
+    ignore_comment_lines(STREAM);
+    
+    i32 nvertices, nedges;
+    scan_order_and_size(STREAM, &nvertices, &nedges);
 
-    return scan_vertices(file_in, *p_V, *p_E);
+    i32* edges = malloc(2*nedges*sizeof(i32));
+    assert(edges);
+
+    scan_edges(STREAM, edges, nedges);
+    sort_edges(edges, nedges);
+
+    *ptr_nvertices = nvertices;
+    *ptr_nedges = nedges;
+    return edges;
 }

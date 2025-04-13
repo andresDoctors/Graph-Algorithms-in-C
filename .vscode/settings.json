@@ -4,6 +4,9 @@
         "dict.h": "c",
         "graph_io.h": "c",
         "greedy.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "algorithms.h": "c",
+        "inttypes.h": "c",
+        "primitives.h": "c"
     }
 }

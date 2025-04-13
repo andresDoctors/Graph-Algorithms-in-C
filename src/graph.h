@@ -1,15 +1,16 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 
+
 #include <stdio.h>
+#include "primitives.h"
 
-#include "../types/names.h"
-#include "../types/integers.h"
 
+typedef i32 name_t;
 
 typedef struct GraphSt {
-    i32 V;
-    i32 E;
+    i32 nvertices;
+    i32 nedges;
     i32 Delta;
     i32* degrees;
     i32** neighbors;
@@ -19,17 +20,13 @@ typedef struct GraphSt {
 typedef GraphSt* graph_t;
 
 
-graph_t graph_new(FILE* file_in);
+graph_t graph_new(FILE* STREAM);
 void graph_destroy(graph_t g);
-void graph_sort_by_name(graph_t g);
 
 
-#define number_of_vertices(g) (g)->V 
-#define number_of_edges(g)    (g)->E
-#define Delta(g)              (g)->Delta
-#define name(g, v)            (g)->names[v]
-#define degree(g, v)          (g)->degrees[v]
-#define neighbor(g, v, i)     (g)->neighbors[v][i]
+#define name(g, v)        (g)->names[v]
+#define degree(g, v)      (g)->degrees[v]
+#define neighbor(g, v, i) (g)->neighbors[v][i]
 
 
 #endif

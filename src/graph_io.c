@@ -48,42 +48,23 @@ static void scan_edges(FILE* STREAM, i32* edges, i32 nedges) {
     }
 }
 
-static void sort_edges(i32* edges, i32 nedges) {
-    assert(edges);
-    assert(nedges > 0);
-
-    int edge_cmp(const void* _EDGE1_, const void * _EDGE2_) {
-        i32* EDGE1 = (i32*) _EDGE1_;
-        i32* EDGE2 = (i32*) _EDGE2_;
-
-        i32 v1 = EDGE1[0], v2 = EDGE2[0];
-        if(v1 == v2) {
-            v1 = EDGE1[1], v2 = EDGE2[1];
-        }
-    
-        return (v1 > v2) - (v1 < v2);
-    }
-
-    qsort(edges, nedges, 2*sizeof(i32), edge_cmp);
-}
-
 i32* scan_graph(FILE* STREAM, i32* ptr_nvertices, i32* ptr_nedges) {
     assert(STREAM);
     assert(ptr_nvertices);
     assert(ptr_nedges);
 
-    ignore_comment_lines(STREAM);
-    
     i32 nvertices, nedges;
+    ignore_comment_lines(STREAM);
     scan_order_and_size(STREAM, &nvertices, &nedges);
 
     i32* edges = malloc(2*nedges*sizeof(i32));
-    assert(edges);
-
     scan_edges(STREAM, edges, nedges);
-    sort_edges(edges, nedges);
 
     *ptr_nvertices = nvertices;
     *ptr_nedges = nedges;
+
+    assert(edges);
+    assert(nvertices > 0);
+    assert(nedges > 0);
     return edges;
 }

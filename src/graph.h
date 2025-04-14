@@ -6,15 +6,13 @@
 #include "primitives.h"
 
 
-typedef i32 name_t;
-
 typedef struct GraphSt {
     i32 nvertices;
     i32 nedges;
     i32 Delta;
     i32* degrees;
     i32** neighbors;
-    name_t* names;
+    i32* names;
 } GraphSt;
 
 typedef GraphSt* graph_t;

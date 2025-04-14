@@ -2,16 +2,16 @@
 #include <string.h>
 
 #include "graph.h"
-#include "graph.helpers/graph_io.h"
+#include "graph_io.h"
 
 
 static graph_t graph_malloc(i32 nvertices) {
     assert(nvertices > 0);
 
     graph_t new_graph    = malloc(sizeof(GraphSt));
-    new_graph->degrees   = malloc(nvertices * sizeof(i32));
-    new_graph->neighbors = malloc(nvertices * sizeof(i32*));
-    new_graph->names     = malloc(nvertices * sizeof(name_t));
+    new_graph->degrees   = malloc(nvertices*sizeof(i32));
+    new_graph->neighbors = malloc(nvertices*sizeof(i32*));
+    new_graph->names     = malloc(nvertices*sizeof(i32));
 
     return new_graph;
 }

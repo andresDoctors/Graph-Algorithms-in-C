@@ -6,8 +6,6 @@
 #include <inttypes.h>
 
 
-typedef char* string;
-
 typedef int8_t  i08;
 typedef int16_t i16;
 typedef int32_t i32;

@@ -35,13 +35,14 @@ static void bitarray_set(u64* bits, i32 i) {
 
 /* Finds the smallest non-negative integer `i` such that:
  * - `bitarray_set(bits, i)` has not been called (i.e., the bit at position `i` is not set). */
-static i32 bits_find_first_zero(const u64* BITS) {
+static i32 bitarray_find_first_zero(const u64* BITS) {
     assert(BITS);
 
     i32 i, j;
     for(i = 0; BITS[i] == u64_MAX; i++);
     j = __builtin_ctzll(~BITS[i]);
 
+    assert(0 <= j && j < 64);
     return 64*i + j;
 }
 
@@ -70,15 +71,14 @@ i32 greedy(graph_t g, const i32* ORDER, i32* colors) {
         i32 v = ORDER[i];
         bitarray_clear(neighbor_colors_bitmap, degree(g, v) + 3);
 
-        // #pragma omp parallel for
+        #pragma omp parallel for
         for(i32 j = 0; j < degree(g, v); j++) {
             i32 w = neighbor(g, v, j);
             bitarray_set(neighbor_colors_bitmap, colors[w]);
-            // printf("Thread %d: i = %d\n", omp_get_thread_num(), i);
         }
 
         bitarray_set(neighbor_colors_bitmap, 0);
-        colors[v] = bits_find_first_zero(neighbor_colors_bitmap);
+        colors[v] = bitarray_find_first_zero(neighbor_colors_bitmap);
     }
 
     for (i32 v = 0; v < g->nvertices; v++)

@@ -88,3 +88,1062 @@ src/graph.algorithms/greedy.c:118:9: missed: statement clobbers memory: __assert
 src/graph.algorithms/greedy.c:120:5: missed: statement clobbers memory: free (bits_63);
 src/graph.algorithms/greedy.c:68:5: missed: statement clobbers memory: __assert_fail ("n > 0", "src/graph.algorithms/greedy.c", 68, &__PRETTY_FUNCTION__);
 src/graph.algorithms/greedy.c:120:5: missed: statement clobbers memory: free (bits_63);
+src/graph_io.c:14:24: optimized:   Inlining fgets/20 into ignore_comment_lines/54 (always_inline).
+src/graph_io.c:62:5: note: Considering inline candidate scan_edges/56.
+src/graph_io.c:62:5: missed:   will not early inline: scan_graph/57->scan_edges/56, growth 44 exceeds --param early-inlining-insns
+src/graph_io.c:59:5: note: Considering inline candidate scan_order_and_size/55.
+src/graph_io.c:59:5: missed:   will not early inline: scan_graph/57->scan_order_and_size/55, growth 17 exceeds --param early-inlining-insns
+src/graph_io.c:58:5: note: Considering inline candidate ignore_comment_lines/54.
+src/graph_io.c:58:5: missed:   not inlinable: scan_graph/57 -> ignore_comment_lines/54, --param large-stack-frame-growth limit reached
+src/graph_io.c:69:5: missed:   not inlinable: scan_graph/57 -> __assert_fail/58, function body not available
+src/graph_io.c:68:5: missed:   not inlinable: scan_graph/57 -> __assert_fail/58, function body not available
+src/graph_io.c:67:5: missed:   not inlinable: scan_graph/57 -> __assert_fail/58, function body not available
+src/graph_io.c:61:18: missed:   not inlinable: scan_graph/57 -> malloc/60, function body not available
+src/graph_io.c:58:5: missed:   not inlinable: scan_graph/57 -> ignore_comment_lines/54, --param large-stack-frame-growth limit reached
+src/graph_io.c:55:5: missed:   not inlinable: scan_graph/57 -> __assert_fail/58, function body not available
+src/graph_io.c:54:5: missed:   not inlinable: scan_graph/57 -> __assert_fail/58, function body not available
+src/graph_io.c:53:5: missed:   not inlinable: scan_graph/57 -> __assert_fail/58, function body not available
+src/graph_io.c:45:9: missed:   not inlinable: scan_edges/56 -> __assert_fail/58, function body not available
+src/graph_io.c:44:24: missed:   not inlinable: scan_edges/56 -> fscanf/70, function body not available
+src/graph_io.c:38:5: missed:   not inlinable: scan_edges/56 -> __assert_fail/58, function body not available
+src/graph_io.c:37:5: missed:   not inlinable: scan_edges/56 -> __assert_fail/58, function body not available
+src/graph_io.c:36:5: missed:   not inlinable: scan_edges/56 -> __assert_fail/58, function body not available
+src/graph_io.c:32:5: missed:   not inlinable: scan_order_and_size/55 -> __assert_fail/58, function body not available
+src/graph_io.c:30:24: missed:   not inlinable: scan_order_and_size/55 -> fscanf/70, function body not available
+src/graph_io.c:27:5: missed:   not inlinable: scan_order_and_size/55 -> __assert_fail/58, function body not available
+src/graph_io.c:26:5: missed:   not inlinable: scan_order_and_size/55 -> __assert_fail/58, function body not available
+src/graph_io.c:25:5: missed:   not inlinable: scan_order_and_size/55 -> __assert_fail/58, function body not available
+src/graph_io.c:21:5: missed:   not inlinable: ignore_comment_lines/54 -> __assert_fail/58, function body not available
+src/graph_io.c:20:5: missed:   not inlinable: ignore_comment_lines/54 -> __assert_fail/58, function body not available
+src/graph_io.c:18:18: missed:   not inlinable: ignore_comment_lines/54 -> fseek/63, function body not available
+src/graph_io.c:18:33: missed:   not inlinable: ignore_comment_lines/54 -> strlen/62, function body not available
+src/graph_io.c:15:9: missed:   not inlinable: ignore_comment_lines/54 -> __assert_fail/58, function body not available
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:265:10: missed:   not inlinable: ignore_comment_lines/54 -> __fgets_alias/68, function body not available
+src/graph_io.c:10:5: missed:   not inlinable: ignore_comment_lines/54 -> __assert_fail/58, function body not available
+src/graph_io.c:59:5: optimized:  Inlined scan_order_and_size/55 into scan_graph/57 which now has time 77.940803 and size 93, net change of -11.
+src/graph_io.c:62:5: optimized:  Inlined scan_edges/56 into scan_graph/57 which now has time 600.697952 and size 137, net change of -7.
+Unit growth for small function inlining: 204->186 (-9%)
+src/graph_io.c:58:5: missed:   not inlinable: scan_graph/57 -> ignore_comment_lines/54, --param large-stack-frame-growth limit reached
+src/graph_io.c:58:5: missed:   not inlinable: scan_graph/57 -> ignore_comment_lines/54, --param large-stack-frame-growth limit reached
+
+Inlined 3 calls, eliminated 2 functions
+
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:265:10: missed: couldn't vectorize loop
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:265:10: missed: not vectorized: control flow in loop.
+src/graph_io.c:9:13: note: vectorized 0 loops in function.
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:265:10: missed: statement clobbers memory: _16 = __fgets_alias (&line, 1024, STREAM_7(D));
+src/graph_io.c:10:5: missed: statement clobbers memory: __assert_fail ("STREAM", "src/graph_io.c", 10, &__PRETTY_FUNCTION__);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:265:10: missed: statement clobbers memory: _16 = __fgets_alias (&line, 1024, STREAM_7(D));
+src/graph_io.c:15:9: missed: statement clobbers memory: __assert_fail ("error1", "src/graph_io.c", 15, &__PRETTY_FUNCTION__);
+src/graph_io.c:18:33: missed: statement clobbers memory: _2 = strlen (&line);
+src/graph_io.c:18:18: missed: statement clobbers memory: error2_12 = fseek (STREAM_7(D), _4, 1);
+src/graph_io.c:20:5: missed: statement clobbers memory: __assert_fail ("!error2", "src/graph_io.c", 20, &__PRETTY_FUNCTION__);
+src/graph_io.c:21:5: missed: statement clobbers memory: __assert_fail ("line[0] == \'p\'", "src/graph_io.c", 21, &__PRETTY_FUNCTION__);
+src/graph_io.c:42:20: missed: couldn't vectorize loop
+src/graph_io.c:42:20: missed: not vectorized: control flow in loop.
+src/graph_io.c:52:6: note: vectorized 0 loops in function.
+src/graph_io.c:44:24: missed: statement clobbers memory: nassignments_27 = fscanf (STREAM_8(D), &TEMPLATE, &name1, &name2);
+src/graph_io.c:53:5: missed: statement clobbers memory: __assert_fail ("STREAM", "src/graph_io.c", 53, &__PRETTY_FUNCTION__);
+src/graph_io.c:54:5: missed: statement clobbers memory: __assert_fail ("ptr_nvertices", "src/graph_io.c", 54, &__PRETTY_FUNCTION__);
+src/graph_io.c:55:5: missed: statement clobbers memory: __assert_fail ("ptr_nedges", "src/graph_io.c", 55, &__PRETTY_FUNCTION__);
+src/graph_io.c:58:5: missed: statement clobbers memory: ignore_comment_lines (STREAM_8(D));
+src/graph_io.c:30:24: missed: statement clobbers memory: nassignments_39 = fscanf (STREAM_8(D), &TEMPLATE, &nvertices, &nedges);
+src/graph_io.c:32:5: missed: statement clobbers memory: __assert_fail ("nassignments == 2", "src/graph_io.c", 32, &__PRETTY_FUNCTION__);
+src/graph_io.c:61:18: missed: statement clobbers memory: edges_18 = malloc (_4);
+src/graph_io.c:37:5: missed: statement clobbers memory: __assert_fail ("edges", "src/graph_io.c", 37, &__PRETTY_FUNCTION__);
+src/graph_io.c:38:5: missed: statement clobbers memory: __assert_fail ("nedges > 0", "src/graph_io.c", 38, &__PRETTY_FUNCTION__);
+src/graph_io.c:44:24: missed: statement clobbers memory: nassignments_27 = fscanf (STREAM_8(D), &TEMPLATE, &name1, &name2);
+src/graph_io.c:45:9: missed: statement clobbers memory: __assert_fail ("nassignments == 2", "src/graph_io.c", 45, &__PRETTY_FUNCTION__);
+src/graph_io.c:40:5: note: ***** Re-trying analysis with vector size 16
+src/graph_io.c:68:5: missed: statement clobbers memory: __assert_fail ("nvertices > 0", "src/graph_io.c", 68, &__PRETTY_FUNCTION__);
+src/graph_io.c:69:5: missed: statement clobbers memory: __assert_fail ("nedges > 0", "src/graph_io.c", 69, &__PRETTY_FUNCTION__);
+src/graph.c:65:16: optimized:   Inlining bsearch/9 into vertex/58 (always_inline).
+/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:33:23: note: Considering inline candidate cmp_i32/55.
+/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:33:23: optimized:  Inlining cmp_i32/55 into vertex/58.
+src/graph.c:81:5: optimized:   Inlining memset/20 into graph_populate_degrees/59 (always_inline).
+src/graph.c:84:17: note: Considering inline candidate vertex/58.
+src/graph.c:84:17: missed:   will not early inline: graph_populate_degrees/59->vertex/58, growth 51 exceeds --param early-inlining-insns
+src/graph.c:115:5: optimized:   Inlining memset/20 into graph_populate_neighbors/61 (always_inline).
+src/graph.c:122:18: note: Considering inline candidate vertex/58.
+src/graph.c:122:18: missed:   will not early inline: graph_populate_neighbors/61->vertex/58, growth 51 exceeds --param early-inlining-insns
+src/graph.c:121:18: note: Considering inline candidate vertex/58.
+src/graph.c:121:18: missed:   will not early inline: graph_populate_neighbors/61->vertex/58, growth 51 exceeds --param early-inlining-insns
+src/graph.c:52:5: optimized:   Inlining memcpy/18 into graph_populate_names/57 (always_inline).
+src/graph.c:54:18: note: Considering inline candidate uniques_from_sorted/56.
+src/graph.c:54:18: missed:   will not early inline: graph_populate_names/57->uniques_from_sorted/56, growth 50 exceeds --param early-inlining-insns
+src/graph.c:143:16: note: Considering inline candidate maximum_i32/60.
+src/graph.c:143:16: missed:   will not early inline: graph_new/62->maximum_i32/60, growth 18 exceeds --param early-inlining-insns
+src/graph.c:142:5: note: Considering inline candidate graph_populate_neighbors/61.
+src/graph.c:142:5: missed:   will not early inline: graph_new/62->graph_populate_neighbors/61, growth 123 exceeds --param early-inlining-insns
+src/graph.c:141:5: note: Considering inline candidate graph_populate_degrees/59.
+src/graph.c:141:5: missed:   will not early inline: graph_new/62->graph_populate_degrees/59, growth 57 exceeds --param early-inlining-insns
+src/graph.c:140:5: note: Considering inline candidate graph_populate_names/57.
+src/graph.c:140:5: missed:   will not early inline: graph_new/62->graph_populate_names/57, growth 65 exceeds --param early-inlining-insns
+src/graph.c:137:17: note: Considering inline candidate graph_malloc/54.
+src/graph.c:137:17: missed:   will not early inline: graph_new/62->graph_malloc/54, growth 21 exceeds --param early-inlining-insns
+src/graph.c:155:5: missed:   not inlinable: graph_destroy/63 -> free/65, function body not available
+src/graph.c:154:5: missed:   not inlinable: graph_destroy/63 -> free/65, function body not available
+src/graph.c:153:5: missed:   not inlinable: graph_destroy/63 -> free/65, function body not available
+src/graph.c:152:5: missed:   not inlinable: graph_destroy/63 -> free/65, function body not available
+src/graph.c:151:9: missed:   not inlinable: graph_destroy/63 -> free/65, function body not available
+src/graph.c:145:5: missed:   not inlinable: graph_new/62 -> free/65, function body not available
+src/graph.c:135:18: missed:   not inlinable: graph_new/62 -> scan_graph/64, function body not available
+src/graph.c:130:5: missed:   not inlinable: graph_populate_neighbors/61 -> free/65, function body not available
+src/graph.c:129:9: missed:   not inlinable: graph_populate_neighbors/61 -> __assert_fail/66, function body not available
+src/graph.c:122:18: missed:   not inlinable: graph_populate_neighbors/61 -> vertex/58, --param max-inline-insns-auto limit reached
+src/graph.c:121:18: missed:   not inlinable: graph_populate_neighbors/61 -> vertex/58, --param max-inline-insns-auto limit reached
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: graph_populate_neighbors/61 -> __builtin___memset_chk/75, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: graph_populate_neighbors/61 -> __builtin_object_size/71, function body not available
+src/graph.c:114:23: missed:   not inlinable: graph_populate_neighbors/61 -> malloc/68, function body not available
+src/graph.c:112:27: missed:   not inlinable: graph_populate_neighbors/61 -> malloc/68, function body not available
+src/graph.c:109:5: missed:   not inlinable: graph_populate_neighbors/61 -> __assert_fail/66, function body not available
+src/graph.c:108:5: missed:   not inlinable: graph_populate_neighbors/61 -> __assert_fail/66, function body not available
+src/graph.c:107:5: missed:   not inlinable: graph_populate_neighbors/61 -> __assert_fail/66, function body not available
+src/graph.c:106:5: missed:   not inlinable: graph_populate_neighbors/61 -> __assert_fail/66, function body not available
+src/graph.c:105:5: missed:   not inlinable: graph_populate_neighbors/61 -> __assert_fail/66, function body not available
+src/graph.c:104:5: missed:   not inlinable: graph_populate_neighbors/61 -> __assert_fail/66, function body not available
+src/graph.c:91:5: missed:   not inlinable: maximum_i32/60 -> __assert_fail/66, function body not available
+src/graph.c:90:5: missed:   not inlinable: maximum_i32/60 -> __assert_fail/66, function body not available
+src/graph.c:84:17: missed:   not inlinable: graph_populate_degrees/59 -> vertex/58, --param max-inline-insns-auto limit reached
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: graph_populate_degrees/59 -> __builtin___memset_chk/75, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: graph_populate_degrees/59 -> __builtin_object_size/71, function body not available
+src/graph.c:79:5: missed:   not inlinable: graph_populate_degrees/59 -> __assert_fail/66, function body not available
+src/graph.c:78:5: missed:   not inlinable: graph_populate_degrees/59 -> __assert_fail/66, function body not available
+src/graph.c:77:5: missed:   not inlinable: graph_populate_degrees/59 -> __assert_fail/66, function body not available
+src/graph.c:76:5: missed:   not inlinable: graph_populate_degrees/59 -> __assert_fail/66, function body not available
+src/graph.c:75:5: missed:   not inlinable: graph_populate_degrees/59 -> __assert_fail/66, function body not available
+src/graph.c:69:5: missed:   not inlinable: vertex/58 -> __assert_fail/66, function body not available
+src/graph.c:66:5: missed:   not inlinable: vertex/58 -> __assert_fail/66, function body not available
+src/graph.c:63:5: missed:   not inlinable: vertex/58 -> __assert_fail/66, function body not available
+src/graph.c:62:5: missed:   not inlinable: vertex/58 -> __assert_fail/66, function body not available
+src/graph.c:61:5: missed:   not inlinable: vertex/58 -> __assert_fail/66, function body not available
+src/graph.c:57:5: missed:   not inlinable: graph_populate_names/57 -> __assert_fail/66, function body not available
+src/graph.c:56:5: missed:   not inlinable: graph_populate_names/57 -> free/65, function body not available
+src/graph.c:53:5: missed:   not inlinable: graph_populate_names/57 -> qsort/70, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:34:10: missed:   not inlinable: graph_populate_names/57 -> __builtin___memcpy_chk/72, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:34:10: missed:   not inlinable: graph_populate_names/57 -> __builtin_object_size/71, function body not available
+src/graph.c:51:29: missed:   not inlinable: graph_populate_names/57 -> malloc/68, function body not available
+src/graph.c:49:5: missed:   not inlinable: graph_populate_names/57 -> __assert_fail/66, function body not available
+src/graph.c:48:5: missed:   not inlinable: graph_populate_names/57 -> __assert_fail/66, function body not available
+src/graph.c:47:5: missed:   not inlinable: graph_populate_names/57 -> __assert_fail/66, function body not available
+src/graph.c:46:5: missed:   not inlinable: graph_populate_names/57 -> __assert_fail/66, function body not available
+src/graph.c:45:5: missed:   not inlinable: graph_populate_names/57 -> __assert_fail/66, function body not available
+src/graph.c:31:9: missed:   not inlinable: uniques_from_sorted/56 -> __assert_fail/66, function body not available
+src/graph.c:29:5: missed:   not inlinable: uniques_from_sorted/56 -> __assert_fail/66, function body not available
+src/graph.c:28:5: missed:   not inlinable: uniques_from_sorted/56 -> __assert_fail/66, function body not available
+src/graph.c:27:5: missed:   not inlinable: uniques_from_sorted/56 -> __assert_fail/66, function body not available
+src/graph.c:15:28: missed:   not inlinable: graph_malloc/54 -> malloc/68, function body not available
+src/graph.c:14:28: missed:   not inlinable: graph_malloc/54 -> malloc/68, function body not available
+src/graph.c:13:28: missed:   not inlinable: graph_malloc/54 -> malloc/68, function body not available
+src/graph.c:12:28: missed:   not inlinable: graph_malloc/54 -> malloc/68, function body not available
+src/graph.c:10:5: missed:   not inlinable: graph_malloc/54 -> __assert_fail/66, function body not available
+src/graph.c:143:16: optimized:  Inlined maximum_i32/60 into graph_new/62 which now has time 146.099462 and size 52, net change of -7.
+src/graph.c:137:17: optimized:  Inlined graph_malloc/54 into graph_new/62 which now has time 189.083862 and size 73, net change of -6.
+src/graph.c:141:5: optimized:  Inlined graph_populate_degrees/59 into graph_new/62 which now has time 417.008921 and size 129, net change of -9.
+src/graph.c:54:18: optimized:  Inlined uniques_from_sorted/56 into graph_populate_names/57 which now has time 416.317860 and size 124, net change of -9.
+src/graph.c:142:5: optimized:  Inlined graph_populate_neighbors/61 into graph_new/62 which now has time 1313.040911 and size 252, net change of -10.
+src/graph.c:140:5: optimized:  Inlined graph_populate_names/57 into graph_new/62 which now has time 1712.367767 and size 367, net change of -9.
+Unit growth for small function inlining: 508->458 (-10%)
+
+Inlined 11 calls, eliminated 6 functions
+
+src/graph.c:60:12: missed: couldn't vectorize loop
+src/graph.c:60:12: missed: not vectorized: control flow in loop.
+/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:29:9: missed: couldn't vectorize loop
+/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:29:9: missed: not vectorized: control flow in loop.
+src/graph.c:60:12: note: vectorized 0 loops in function.
+src/graph.c:22:9: missed: failed: evolution of base is not affine.
+src/graph.c:61:5: missed: statement clobbers memory: __assert_fail ("g", "src/graph.c", 61, &__PRETTY_FUNCTION__);
+src/graph.c:62:5: missed: statement clobbers memory: __assert_fail ("g->names", "src/graph.c", 62, &__PRETTY_FUNCTION__);
+src/graph.c:63:5: missed: statement clobbers memory: __assert_fail ("g->nvertices > 0", "src/graph.c", 63, &__PRETTY_FUNCTION__);
+src/graph.c:69:5: missed: statement clobbers memory: __assert_fail ("0 <= v && v < g->nvertices", "src/graph.c", 69, &__PRETTY_FUNCTION__);
+src/graph.c:66:5: missed: statement clobbers memory: __assert_fail ("ptr != NULL", "src/graph.c", 66, &__PRETTY_FUNCTION__);
+src/graph.c:37:29: missed: failed: evolution of base is not affine.
+src/graph.c:37:29: missed: failed: evolution of base is not affine.
+src/graph.c:94:5: optimized: loop vectorized using 32 byte vectors
+src/graph.c:129:9: missed: couldn't vectorize loop
+src/graph.c:129:9: missed: not vectorized: control flow in loop.
+src/graph.c:117:5: missed: couldn't vectorize loop
+src/graph.c:117:5: missed: not vectorized: number of iterations cannot be computed.
+src/graph.c:111:5: missed: couldn't vectorize loop
+src/graph.c:111:5: missed: not vectorized: latch block not empty.
+src/graph.c:82:5: missed: couldn't vectorize loop
+src/graph.c:82:5: missed: not vectorized: number of iterations cannot be computed.
+src/graph.c:35:5: missed: couldn't vectorize loop
+src/graph.c:37:29: missed: not vectorized: not suitable for scatter store .MASK_STORE (_163, 32B, _250, _155);
+src/graph.c:31:9: missed: couldn't vectorize loop
+src/graph.c:31:9: missed: not vectorized: control flow in loop.
+src/graph.c:133:9: note: vectorized 1 loops in function.
+src/graph.c:121:18: missed: statement clobbers memory: v1_62 = vertex (new_graph_132, name1_57);
+src/graph.c:112:44: missed: failed: evolution of base is not affine.
+src/graph.c:112:27: missed: statement clobbers memory: _46 = malloc (_43);
+src/graph.c:84:17: missed: statement clobbers memory: v_109 = vertex (new_graph_132, name_108);
+src/graph.c:37:29: missed: failed: evolution of base is not affine.
+src/graph.c:94:5: optimized: loop with 6 iterations completely unrolled (header execution count 411957893)
+src/graph.c:135:18: missed: statement clobbers memory: edges_10 = scan_graph (STREAM_8(D), &nvertices, &nedges);
+src/graph.c:10:5: missed: statement clobbers memory: __assert_fail ("nvertices > 0", "src/graph.c", 10, &__PRETTY_FUNCTION__);
+src/graph.c:12:28: missed: statement clobbers memory: new_graph_132 = malloc (40);
+src/graph.c:13:28: missed: statement clobbers memory: _135 = malloc (_134);
+src/graph.c:14:28: missed: statement clobbers memory: _137 = malloc (_136);
+src/graph.c:15:28: missed: statement clobbers memory: _138 = malloc (_134);
+src/graph.c:46:5: note: ***** Re-trying analysis with vector size 16
+src/graph.c:46:5: missed: statement clobbers memory: __assert_fail ("g->names", "src/graph.c", 46, &__PRETTY_FUNCTION__);
+src/graph.c:47:5: missed: statement clobbers memory: __assert_fail ("g->nedges > 0", "src/graph.c", 47, &__PRETTY_FUNCTION__);
+src/graph.c:48:5: missed: statement clobbers memory: __assert_fail ("g->nvertices > 0", "src/graph.c", 48, &__PRETTY_FUNCTION__);
+src/graph.c:49:5: missed: statement clobbers memory: __assert_fail ("edges", "src/graph.c", 49, &__PRETTY_FUNCTION__);
+src/graph.c:51:29: missed: statement clobbers memory: non_unique_names_125 = malloc (_124);
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:34:10: missed: statement clobbers memory: __builtin_memcpy (non_unique_names_125, edges_10, _124);
+src/graph.c:53:5: missed: statement clobbers memory: qsort (non_unique_names_125, _123, 4, cmp_i32);
+src/graph.c:27:5: missed: statement clobbers memory: __assert_fail ("dst", "src/graph.c", 27, &__PRETTY_FUNCTION__);
+src/graph.c:29:5: missed: statement clobbers memory: __assert_fail ("n > 0", "src/graph.c", 29, &__PRETTY_FUNCTION__);
+src/graph.c:31:9: missed: statement clobbers memory: __assert_fail ("SRC[i] <= SRC[i+1]", "src/graph.c", 31, &__PRETTY_FUNCTION__);
+src/graph.c:56:5: missed: statement clobbers memory: free (non_unique_names_125);
+src/graph.c:57:5: missed: statement clobbers memory: __assert_fail ("nnames == g->nvertices", "src/graph.c", 57, &__PRETTY_FUNCTION__);
+src/graph.c:76:5: missed: statement clobbers memory: __assert_fail ("g->degrees", "src/graph.c", 76, &__PRETTY_FUNCTION__);
+src/graph.c:77:5: missed: statement clobbers memory: __assert_fail ("g->nedges > 0", "src/graph.c", 77, &__PRETTY_FUNCTION__);
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed: statement clobbers memory: __builtin_memset (_98, 0, _102);
+src/graph.c:84:17: missed: statement clobbers memory: v_109 = vertex (new_graph_132, name_108);
+src/graph.c:105:5: missed: statement clobbers memory: __assert_fail ("g->degrees", "src/graph.c", 105, &__PRETTY_FUNCTION__);
+src/graph.c:106:5: missed: statement clobbers memory: __assert_fail ("g->neighbors", "src/graph.c", 106, &__PRETTY_FUNCTION__);
+src/graph.c:107:5: missed: statement clobbers memory: __assert_fail ("g->nvertices > 0", "src/graph.c", 107, &__PRETTY_FUNCTION__);
+src/graph.c:108:5: missed: statement clobbers memory: __assert_fail ("g->nedges > 0", "src/graph.c", 108, &__PRETTY_FUNCTION__);
+src/graph.c:112:27: missed: statement clobbers memory: _46 = malloc (_43);
+src/graph.c:114:23: missed: statement clobbers memory: nneighbors_50 = malloc (_49);
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed: statement clobbers memory: __builtin_memset (nneighbors_50, 0, _49);
+src/graph.c:121:18: missed: statement clobbers memory: v1_62 = vertex (new_graph_132, name1_57);
+src/graph.c:122:18: missed: statement clobbers memory: v2_63 = vertex (new_graph_132, name2_61);
+src/graph.c:130:5: missed: statement clobbers memory: free (nneighbors_50);
+src/graph.c:129:9: missed: statement clobbers memory: __assert_fail ("nneighbors[i] == g->degrees[i]", "src/graph.c", 129, &__PRETTY_FUNCTION__);
+src/graph.c:90:5: missed: statement clobbers memory: __assert_fail ("arr", "src/graph.c", 90, &__PRETTY_FUNCTION__);
+src/graph.c:91:5: missed: statement clobbers memory: __assert_fail ("n > 0", "src/graph.c", 91, &__PRETTY_FUNCTION__);
+src/graph.c:145:5: missed: statement clobbers memory: free (edges_10);
+src/graph.c:150:5: missed: couldn't vectorize loop
+src/graph.c:150:5: missed: not vectorized: number of iterations cannot be computed.
+src/graph.c:149:6: note: vectorized 0 loops in function.
+src/graph.c:151:9: missed: failed: evolution of base is not affine.
+src/graph.c:151:9: missed: statement clobbers memory: free (_5);
+src/graph.c:151:9: missed: statement clobbers memory: free (_5);
+src/graph.c:152:5: missed: statement clobbers memory: free (_7);
+src/graph.c:153:5: missed: statement clobbers memory: free (_8);
+src/graph.c:154:5: missed: statement clobbers memory: free (_9);
+src/graph.c:155:5: missed: statement clobbers memory: free (g_13(D));
+src/greedy.c:26:5: optimized:   Inlining memset/20 into bitarray_clear/55 (always_inline).
+src/greedy.c:77:13: optimized:   Inlining printf/42 into greedy._omp_fn.0/60 (always_inline).
+src/greedy.c:76:13: note: Considering inline candidate bitarray_set/56.
+src/greedy.c:76:13: missed:   will not early inline: greedy._omp_fn.0/60->bitarray_set/56, growth 15 exceeds --param early-inlining-insns
+src/greedy.c:66:5: optimized:   Inlining memset/20 into greedy/59 (always_inline).
+src/greedy.c:88:12: note: Considering inline candidate maximum_i32/58.
+src/greedy.c:88:12: missed:   will not early inline: greedy/59->maximum_i32/58, growth 18 exceeds --param early-inlining-insns
+src/greedy.c:81:21: note: Considering inline candidate bitarray_find_first_zero/57.
+src/greedy.c:81:21: missed:   will not early inline: greedy/59->bitarray_find_first_zero/57, growth 14 exceeds --param early-inlining-insns divided by number of calls
+src/greedy.c:80:9: note: Considering inline candidate bitarray_set/56.
+src/greedy.c:80:9: missed:   will not early inline: greedy/59->bitarray_set/56, growth 8 exceeds --param early-inlining-insns divided by number of calls
+src/greedy.c:71:9: note: Considering inline candidate bitarray_clear/55.
+src/greedy.c:71:9: missed:   will not early inline: greedy/59->bitarray_clear/55, growth 19 exceeds --param early-inlining-insns
+src/greedy.c:67:35: note: Considering inline candidate bitarray_new/54.
+src/greedy.c:67:35: missed:   will not early inline: greedy/59->bitarray_new/54, growth 10 exceeds --param early-inlining-insns divided by number of calls
+src/greedy.c:30:5: missed:   not inlinable: bitarray_set.constprop/79 -> __assert_fail/63, function body not available
+missed:   not inlinable: bitarray_set.constprop/79 -> __builtin_unreachable/80, unreachable
+src/greedy.c:31:5: missed:   not inlinable: bitarray_set.part.0/78 -> __assert_fail/63, function body not available
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed:   not inlinable: greedy._omp_fn.0/60 -> __printf_chk/67, function body not available
+missed:   not inlinable: greedy._omp_fn.0/60 -> __builtin_omp_get_thread_num/62, function body not available
+missed:   not inlinable: greedy._omp_fn.0/60 -> __builtin_omp_get_num_threads/61, function body not available
+src/greedy.c:87:5: missed:   not inlinable: greedy/59 -> free/66, function body not available
+src/greedy.c:85:9: missed:   not inlinable: greedy/59 -> __assert_fail/63, function body not available
+missed:   not inlinable: greedy/59 -> __builtin_GOMP_parallel/65, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: greedy/59 -> __builtin___memset_chk/69, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: greedy/59 -> __builtin_object_size/68, function body not available
+src/greedy.c:64:9: missed:   not inlinable: greedy/59 -> __assert_fail/63, function body not available
+src/greedy.c:50:5: missed:   not inlinable: maximum_i32/58 -> __assert_fail/63, function body not available
+src/greedy.c:49:5: missed:   not inlinable: maximum_i32/58 -> __assert_fail/63, function body not available
+src/greedy.c:43:9: missed:   not inlinable: bitarray_find_first_zero/57 -> __builtin_ctzll/75, function body not available
+src/greedy.c:39:5: missed:   not inlinable: bitarray_find_first_zero/57 -> __assert_fail/63, function body not available
+src/greedy.c:30:5: missed:   not inlinable: bitarray_set/56 -> __assert_fail/63, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: bitarray_clear/55 -> __builtin___memset_chk/69, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: bitarray_clear/55 -> __builtin_object_size/68, function body not available
+src/greedy.c:23:5: missed:   not inlinable: bitarray_clear/55 -> __assert_fail/63, function body not available
+src/greedy.c:22:5: missed:   not inlinable: bitarray_clear/55 -> __assert_fail/63, function body not available
+src/greedy.c:16:17: missed:   not inlinable: bitarray_new/54 -> malloc/71, function body not available
+src/greedy.c:13:5: missed:   not inlinable: bitarray_new/54 -> __assert_fail/63, function body not available
+src/greedy.c:80:9: optimized:  Inlined bitarray_set.constprop/79 into greedy/59 which now has time 1126.563290 and size 94, net change of -6.
+src/greedy.c:81:21: optimized:  Inlined bitarray_find_first_zero/57 into greedy/59 which now has time 1489.288240 and size 108, net change of -6.
+src/greedy.c:76:13: optimized:  Inlined bitarray_set/81 into greedy._omp_fn.0/60 which now has time 230.441818 and size 62, net change of +15.
+src/greedy.c:71:9: optimized:  Inlined bitarray_clear/55 into greedy/59 which now has time 1546.688679 and size 127, net change of -6.
+src/greedy.c:67:35: optimized:  Inlined bitarray_new/54 into greedy/59 which now has time 1551.585190 and size 137, net change of -6.
+src/greedy.c:88:12: optimized:  Inlined maximum_i32/58 into greedy/59 which now has time 1599.639889 and size 155, net change of -7.
+optimized:  Inlined bitarray_set.part.0/82 into bitarray_set/81 which now has time 14.000800 and size 21, net change of +4.
+optimized:  Inlined bitarray_set.part.0/78 into bitarray_set/56 which now has time 14.002399 and size 25, net change of -3.
+Unit growth for small function inlining: 261->246 (-6%)
+
+Inlined 11 calls, eliminated 6 functions
+
+src/greedy.c:75:21: missed: couldn't vectorize loop
+src/greedy.c:75:21: missed: not vectorized: control flow in loop.
+src/greedy.c:73:17: note: vectorized 0 loops in function.
+src/greedy.c:75:21: missed: failed: evolution of base is not affine.
+src/greedy.c:75:17: missed: failed: evolution of base is not affine.
+src/greedy.c:76:13: missed: failed: evolution of base is not affine.
+src/greedy.c:33:18: missed: failed: evolution of base is not affine.
+src/greedy.c:33:18: missed: failed: evolution of base is not affine.
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed: statement clobbers memory: __printf_chk (1, "Thread %d: i = %d\n", _19, i_9);
+src/greedy.c:30:5: missed: statement clobbers memory: __assert_fail ("bits", "src/greedy.c", 30, &__PRETTY_FUNCTION__);
+src/greedy.c:31:5: missed: statement clobbers memory: __assert_fail ("i >= 0", "src/greedy.c", 31, &__PRETTY_FUNCTION__);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed: statement clobbers memory: __printf_chk (1, "Thread %d: i = %d\n", _19, i_9);
+src/greedy.c:53:5: optimized: loop vectorized using 32 byte vectors
+src/greedy.c:85:9: missed: couldn't vectorize loop
+src/greedy.c:85:9: missed: not vectorized: control flow in loop.
+src/greedy.c:23:5: missed: couldn't vectorize loop
+src/greedy.c:23:5: missed: not vectorized: control flow in loop.
+src/greedy.c:42:5: missed: couldn't vectorize loop
+src/greedy.c:42:5: missed: not vectorized: number of iterations cannot be computed.
+src/greedy.c:64:9: missed: couldn't vectorize loop
+src/greedy.c:64:9: missed: not vectorized: control flow in loop.
+src/greedy.c:62:5: note: vectorized 1 loops in function.
+src/greedy.c:53:5: optimized: loop with 6 iterations completely unrolled (header execution count 14897958)
+src/greedy.c:64:9: missed: statement clobbers memory: __assert_fail ("0 <= ORDER[i] && ORDER[i] < g->nvertices", "src/greedy.c", 64, &__PRETTY_FUNCTION__);
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed: statement clobbers memory: __builtin_memset (colors_36(D), 0, _8);
+src/greedy.c:13:5: missed: statement clobbers memory: __assert_fail ("nbits > 0", "src/greedy.c", 13, &__PRETTY_FUNCTION__);
+src/greedy.c:16:17: missed: statement clobbers memory: bits_64 = malloc (_63);
+src/greedy.c:22:5: missed: statement clobbers memory: __assert_fail ("bits", "src/greedy.c", 22, &__PRETTY_FUNCTION__);
+src/greedy.c:23:5: missed: statement clobbers memory: __assert_fail ("nbits > 0", "src/greedy.c", 23, &__PRETTY_FUNCTION__);
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed: statement clobbers memory: __builtin_memset (bits_64, 0, _88);
+src/greedy.c:62:5: missed: statement clobbers memory: __builtin_GOMP_parallel (greedy._omp_fn.0, &.omp_data_o.1, 0, 0);
+src/greedy.c:73:17: note: ***** Re-trying analysis with vector size 16
+src/greedy.c:62:5: missed: statement clobbers memory: __builtin_GOMP_parallel (greedy._omp_fn.0, &.omp_data_o.1, 0, 0);
+src/greedy.c:73:17: note: SLPing BB part
+src/greedy.c:73:17: note: ------>vectorizing SLP node starting from: .omp_data_o.1.g = g_35(D);
+src/greedy.c:73:17: note: vect_is_simple_use: operand g_35(D), type of def: external
+src/greedy.c:73:17: note: vect_is_simple_use: operand colors_36(D), type of def: external
+src/greedy.c:73:17: note: conflicting alias set types.
+src/greedy.c:73:17: note: transform store. ncopies = 1
+src/greedy.c:73:17: note: created new init_stmt: vect_cst__181 = _180;
+src/greedy.c:73:17: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.1.g
+src/greedy.c:73:17: note: created &.omp_data_o.1.g
+src/greedy.c:73:17: note: add new stmt: MEM[(void *)&.omp_data_o.1] = vect_cst__181;
+src/greedy.c:73:17: note: vectorizing stmts using SLP.
+src/greedy.c:73:17: optimized: basic block part vectorized using 16 byte vectors
+src/greedy.c:42:5: note: basic block vectorized
+src/greedy.c:85:9: missed: statement clobbers memory: __assert_fail ("1 <= colors[v] && colors[v] <= g->Delta + 1", "src/greedy.c", 85, &__PRETTY_FUNCTION__);
+src/greedy.c:87:5: missed: statement clobbers memory: free (bits_64);
+src/greedy.c:50:5: missed: statement clobbers memory: __assert_fail ("n > 0", "src/greedy.c", 50, &__PRETTY_FUNCTION__);
+src/greedy.c:87:5: missed: statement clobbers memory: free (bits_64);
+src/main.c:15:5: optimized:   Inlining printf/15 into main/43 (always_inline).
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed:   not inlinable: main/43 -> __printf_chk/48, function body not available
+src/main.c:14:15: missed:   not inlinable: main/43 -> greedy/47, function body not available
+src/main.c:10:18: missed:   not inlinable: main/43 -> malloc/46, function body not available
+src/main.c:9:19: missed:   not inlinable: main/43 -> malloc/46, function body not available
+src/main.c:8:17: missed:   not inlinable: main/43 -> graph_new/45, function body not available
+Unit growth for small function inlining: 31->31 (0%)
+
+Inlined 1 calls, eliminated 0 functions
+
+src/main.c:11:5: missed: couldn't vectorize loop
+src/main.c:11:5: missed: not vectorized: number of iterations cannot be computed.
+src/main.c:7:5: note: vectorized 0 loops in function.
+src/main.c:8:17: missed: statement clobbers memory: g_13 = graph_new (stdin.0_1);
+src/main.c:9:19: missed: statement clobbers memory: colors_15 = malloc (_4);
+src/main.c:10:18: missed: statement clobbers memory: order_17 = malloc (_4);
+src/main.c:14:15: missed: statement clobbers memory: chi_19 = greedy (g_13, order_17, colors_15);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed: statement clobbers memory: __printf_chk (1, "chi:%d\n", chi_19);
+src/graph_io.c:14:24: optimized:   Inlining fgets/20 into ignore_comment_lines/54 (always_inline).
+src/graph_io.c:62:5: note: Considering inline candidate scan_edges/56.
+src/graph_io.c:62:5: missed:   will not early inline: scan_graph/57->scan_edges/56, growth 44 exceeds --param early-inlining-insns
+src/graph_io.c:59:5: note: Considering inline candidate scan_order_and_size/55.
+src/graph_io.c:59:5: missed:   will not early inline: scan_graph/57->scan_order_and_size/55, growth 17 exceeds --param early-inlining-insns
+src/graph_io.c:58:5: note: Considering inline candidate ignore_comment_lines/54.
+src/graph_io.c:58:5: missed:   not inlinable: scan_graph/57 -> ignore_comment_lines/54, --param large-stack-frame-growth limit reached
+src/graph_io.c:69:5: missed:   not inlinable: scan_graph/57 -> __assert_fail/58, function body not available
+src/graph_io.c:68:5: missed:   not inlinable: scan_graph/57 -> __assert_fail/58, function body not available
+src/graph_io.c:67:5: missed:   not inlinable: scan_graph/57 -> __assert_fail/58, function body not available
+src/graph_io.c:61:18: missed:   not inlinable: scan_graph/57 -> malloc/60, function body not available
+src/graph_io.c:58:5: missed:   not inlinable: scan_graph/57 -> ignore_comment_lines/54, --param large-stack-frame-growth limit reached
+src/graph_io.c:55:5: missed:   not inlinable: scan_graph/57 -> __assert_fail/58, function body not available
+src/graph_io.c:54:5: missed:   not inlinable: scan_graph/57 -> __assert_fail/58, function body not available
+src/graph_io.c:53:5: missed:   not inlinable: scan_graph/57 -> __assert_fail/58, function body not available
+src/graph_io.c:45:9: missed:   not inlinable: scan_edges/56 -> __assert_fail/58, function body not available
+src/graph_io.c:44:24: missed:   not inlinable: scan_edges/56 -> fscanf/70, function body not available
+src/graph_io.c:38:5: missed:   not inlinable: scan_edges/56 -> __assert_fail/58, function body not available
+src/graph_io.c:37:5: missed:   not inlinable: scan_edges/56 -> __assert_fail/58, function body not available
+src/graph_io.c:36:5: missed:   not inlinable: scan_edges/56 -> __assert_fail/58, function body not available
+src/graph_io.c:32:5: missed:   not inlinable: scan_order_and_size/55 -> __assert_fail/58, function body not available
+src/graph_io.c:30:24: missed:   not inlinable: scan_order_and_size/55 -> fscanf/70, function body not available
+src/graph_io.c:27:5: missed:   not inlinable: scan_order_and_size/55 -> __assert_fail/58, function body not available
+src/graph_io.c:26:5: missed:   not inlinable: scan_order_and_size/55 -> __assert_fail/58, function body not available
+src/graph_io.c:25:5: missed:   not inlinable: scan_order_and_size/55 -> __assert_fail/58, function body not available
+src/graph_io.c:21:5: missed:   not inlinable: ignore_comment_lines/54 -> __assert_fail/58, function body not available
+src/graph_io.c:20:5: missed:   not inlinable: ignore_comment_lines/54 -> __assert_fail/58, function body not available
+src/graph_io.c:18:18: missed:   not inlinable: ignore_comment_lines/54 -> fseek/63, function body not available
+src/graph_io.c:18:33: missed:   not inlinable: ignore_comment_lines/54 -> strlen/62, function body not available
+src/graph_io.c:15:9: missed:   not inlinable: ignore_comment_lines/54 -> __assert_fail/58, function body not available
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:265:10: missed:   not inlinable: ignore_comment_lines/54 -> __fgets_alias/68, function body not available
+src/graph_io.c:10:5: missed:   not inlinable: ignore_comment_lines/54 -> __assert_fail/58, function body not available
+src/graph_io.c:59:5: optimized:  Inlined scan_order_and_size/55 into scan_graph/57 which now has time 77.940803 and size 93, net change of -11.
+src/graph_io.c:62:5: optimized:  Inlined scan_edges/56 into scan_graph/57 which now has time 600.697952 and size 137, net change of -7.
+Unit growth for small function inlining: 204->186 (-9%)
+src/graph_io.c:58:5: missed:   not inlinable: scan_graph/57 -> ignore_comment_lines/54, --param large-stack-frame-growth limit reached
+src/graph_io.c:58:5: missed:   not inlinable: scan_graph/57 -> ignore_comment_lines/54, --param large-stack-frame-growth limit reached
+
+Inlined 3 calls, eliminated 2 functions
+
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:265:10: missed: couldn't vectorize loop
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:265:10: missed: not vectorized: control flow in loop.
+src/graph_io.c:9:13: note: vectorized 0 loops in function.
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:265:10: missed: statement clobbers memory: _16 = __fgets_alias (&line, 1024, STREAM_7(D));
+src/graph_io.c:10:5: missed: statement clobbers memory: __assert_fail ("STREAM", "src/graph_io.c", 10, &__PRETTY_FUNCTION__);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:265:10: missed: statement clobbers memory: _16 = __fgets_alias (&line, 1024, STREAM_7(D));
+src/graph_io.c:15:9: missed: statement clobbers memory: __assert_fail ("error1", "src/graph_io.c", 15, &__PRETTY_FUNCTION__);
+src/graph_io.c:18:33: missed: statement clobbers memory: _2 = strlen (&line);
+src/graph_io.c:18:18: missed: statement clobbers memory: error2_12 = fseek (STREAM_7(D), _4, 1);
+src/graph_io.c:20:5: missed: statement clobbers memory: __assert_fail ("!error2", "src/graph_io.c", 20, &__PRETTY_FUNCTION__);
+src/graph_io.c:21:5: missed: statement clobbers memory: __assert_fail ("line[0] == \'p\'", "src/graph_io.c", 21, &__PRETTY_FUNCTION__);
+src/graph_io.c:42:20: missed: couldn't vectorize loop
+src/graph_io.c:42:20: missed: not vectorized: control flow in loop.
+src/graph_io.c:52:6: note: vectorized 0 loops in function.
+src/graph_io.c:44:24: missed: statement clobbers memory: nassignments_27 = fscanf (STREAM_8(D), &TEMPLATE, &name1, &name2);
+src/graph_io.c:53:5: missed: statement clobbers memory: __assert_fail ("STREAM", "src/graph_io.c", 53, &__PRETTY_FUNCTION__);
+src/graph_io.c:54:5: missed: statement clobbers memory: __assert_fail ("ptr_nvertices", "src/graph_io.c", 54, &__PRETTY_FUNCTION__);
+src/graph_io.c:55:5: missed: statement clobbers memory: __assert_fail ("ptr_nedges", "src/graph_io.c", 55, &__PRETTY_FUNCTION__);
+src/graph_io.c:58:5: missed: statement clobbers memory: ignore_comment_lines (STREAM_8(D));
+src/graph_io.c:30:24: missed: statement clobbers memory: nassignments_39 = fscanf (STREAM_8(D), &TEMPLATE, &nvertices, &nedges);
+src/graph_io.c:32:5: missed: statement clobbers memory: __assert_fail ("nassignments == 2", "src/graph_io.c", 32, &__PRETTY_FUNCTION__);
+src/graph_io.c:61:18: missed: statement clobbers memory: edges_18 = malloc (_4);
+src/graph_io.c:37:5: missed: statement clobbers memory: __assert_fail ("edges", "src/graph_io.c", 37, &__PRETTY_FUNCTION__);
+src/graph_io.c:38:5: missed: statement clobbers memory: __assert_fail ("nedges > 0", "src/graph_io.c", 38, &__PRETTY_FUNCTION__);
+src/graph_io.c:44:24: missed: statement clobbers memory: nassignments_27 = fscanf (STREAM_8(D), &TEMPLATE, &name1, &name2);
+src/graph_io.c:45:9: missed: statement clobbers memory: __assert_fail ("nassignments == 2", "src/graph_io.c", 45, &__PRETTY_FUNCTION__);
+src/graph_io.c:40:5: note: ***** Re-trying analysis with vector size 16
+src/graph_io.c:68:5: missed: statement clobbers memory: __assert_fail ("nvertices > 0", "src/graph_io.c", 68, &__PRETTY_FUNCTION__);
+src/graph_io.c:69:5: missed: statement clobbers memory: __assert_fail ("nedges > 0", "src/graph_io.c", 69, &__PRETTY_FUNCTION__);
+src/graph.c:65:16: optimized:   Inlining bsearch/9 into vertex/58 (always_inline).
+/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:33:23: note: Considering inline candidate cmp_i32/55.
+/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:33:23: optimized:  Inlining cmp_i32/55 into vertex/58.
+src/graph.c:81:5: optimized:   Inlining memset/20 into graph_populate_degrees/59 (always_inline).
+src/graph.c:84:17: note: Considering inline candidate vertex/58.
+src/graph.c:84:17: missed:   will not early inline: graph_populate_degrees/59->vertex/58, growth 51 exceeds --param early-inlining-insns
+src/graph.c:115:5: optimized:   Inlining memset/20 into graph_populate_neighbors/61 (always_inline).
+src/graph.c:122:18: note: Considering inline candidate vertex/58.
+src/graph.c:122:18: missed:   will not early inline: graph_populate_neighbors/61->vertex/58, growth 51 exceeds --param early-inlining-insns
+src/graph.c:121:18: note: Considering inline candidate vertex/58.
+src/graph.c:121:18: missed:   will not early inline: graph_populate_neighbors/61->vertex/58, growth 51 exceeds --param early-inlining-insns
+src/graph.c:52:5: optimized:   Inlining memcpy/18 into graph_populate_names/57 (always_inline).
+src/graph.c:54:18: note: Considering inline candidate uniques_from_sorted/56.
+src/graph.c:54:18: missed:   will not early inline: graph_populate_names/57->uniques_from_sorted/56, growth 50 exceeds --param early-inlining-insns
+src/graph.c:143:16: note: Considering inline candidate maximum_i32/60.
+src/graph.c:143:16: missed:   will not early inline: graph_new/62->maximum_i32/60, growth 18 exceeds --param early-inlining-insns
+src/graph.c:142:5: note: Considering inline candidate graph_populate_neighbors/61.
+src/graph.c:142:5: missed:   will not early inline: graph_new/62->graph_populate_neighbors/61, growth 123 exceeds --param early-inlining-insns
+src/graph.c:141:5: note: Considering inline candidate graph_populate_degrees/59.
+src/graph.c:141:5: missed:   will not early inline: graph_new/62->graph_populate_degrees/59, growth 57 exceeds --param early-inlining-insns
+src/graph.c:140:5: note: Considering inline candidate graph_populate_names/57.
+src/graph.c:140:5: missed:   will not early inline: graph_new/62->graph_populate_names/57, growth 65 exceeds --param early-inlining-insns
+src/graph.c:137:17: note: Considering inline candidate graph_malloc/54.
+src/graph.c:137:17: missed:   will not early inline: graph_new/62->graph_malloc/54, growth 21 exceeds --param early-inlining-insns
+src/graph.c:155:5: missed:   not inlinable: graph_destroy/63 -> free/65, function body not available
+src/graph.c:154:5: missed:   not inlinable: graph_destroy/63 -> free/65, function body not available
+src/graph.c:153:5: missed:   not inlinable: graph_destroy/63 -> free/65, function body not available
+src/graph.c:152:5: missed:   not inlinable: graph_destroy/63 -> free/65, function body not available
+src/graph.c:151:9: missed:   not inlinable: graph_destroy/63 -> free/65, function body not available
+src/graph.c:145:5: missed:   not inlinable: graph_new/62 -> free/65, function body not available
+src/graph.c:135:18: missed:   not inlinable: graph_new/62 -> scan_graph/64, function body not available
+src/graph.c:130:5: missed:   not inlinable: graph_populate_neighbors/61 -> free/65, function body not available
+src/graph.c:129:9: missed:   not inlinable: graph_populate_neighbors/61 -> __assert_fail/66, function body not available
+src/graph.c:122:18: missed:   not inlinable: graph_populate_neighbors/61 -> vertex/58, --param max-inline-insns-auto limit reached
+src/graph.c:121:18: missed:   not inlinable: graph_populate_neighbors/61 -> vertex/58, --param max-inline-insns-auto limit reached
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: graph_populate_neighbors/61 -> __builtin___memset_chk/75, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: graph_populate_neighbors/61 -> __builtin_object_size/71, function body not available
+src/graph.c:114:23: missed:   not inlinable: graph_populate_neighbors/61 -> malloc/68, function body not available
+src/graph.c:112:27: missed:   not inlinable: graph_populate_neighbors/61 -> malloc/68, function body not available
+src/graph.c:109:5: missed:   not inlinable: graph_populate_neighbors/61 -> __assert_fail/66, function body not available
+src/graph.c:108:5: missed:   not inlinable: graph_populate_neighbors/61 -> __assert_fail/66, function body not available
+src/graph.c:107:5: missed:   not inlinable: graph_populate_neighbors/61 -> __assert_fail/66, function body not available
+src/graph.c:106:5: missed:   not inlinable: graph_populate_neighbors/61 -> __assert_fail/66, function body not available
+src/graph.c:105:5: missed:   not inlinable: graph_populate_neighbors/61 -> __assert_fail/66, function body not available
+src/graph.c:104:5: missed:   not inlinable: graph_populate_neighbors/61 -> __assert_fail/66, function body not available
+src/graph.c:91:5: missed:   not inlinable: maximum_i32/60 -> __assert_fail/66, function body not available
+src/graph.c:90:5: missed:   not inlinable: maximum_i32/60 -> __assert_fail/66, function body not available
+src/graph.c:84:17: missed:   not inlinable: graph_populate_degrees/59 -> vertex/58, --param max-inline-insns-auto limit reached
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: graph_populate_degrees/59 -> __builtin___memset_chk/75, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: graph_populate_degrees/59 -> __builtin_object_size/71, function body not available
+src/graph.c:79:5: missed:   not inlinable: graph_populate_degrees/59 -> __assert_fail/66, function body not available
+src/graph.c:78:5: missed:   not inlinable: graph_populate_degrees/59 -> __assert_fail/66, function body not available
+src/graph.c:77:5: missed:   not inlinable: graph_populate_degrees/59 -> __assert_fail/66, function body not available
+src/graph.c:76:5: missed:   not inlinable: graph_populate_degrees/59 -> __assert_fail/66, function body not available
+src/graph.c:75:5: missed:   not inlinable: graph_populate_degrees/59 -> __assert_fail/66, function body not available
+src/graph.c:69:5: missed:   not inlinable: vertex/58 -> __assert_fail/66, function body not available
+src/graph.c:66:5: missed:   not inlinable: vertex/58 -> __assert_fail/66, function body not available
+src/graph.c:63:5: missed:   not inlinable: vertex/58 -> __assert_fail/66, function body not available
+src/graph.c:62:5: missed:   not inlinable: vertex/58 -> __assert_fail/66, function body not available
+src/graph.c:61:5: missed:   not inlinable: vertex/58 -> __assert_fail/66, function body not available
+src/graph.c:57:5: missed:   not inlinable: graph_populate_names/57 -> __assert_fail/66, function body not available
+src/graph.c:56:5: missed:   not inlinable: graph_populate_names/57 -> free/65, function body not available
+src/graph.c:53:5: missed:   not inlinable: graph_populate_names/57 -> qsort/70, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:34:10: missed:   not inlinable: graph_populate_names/57 -> __builtin___memcpy_chk/72, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:34:10: missed:   not inlinable: graph_populate_names/57 -> __builtin_object_size/71, function body not available
+src/graph.c:51:29: missed:   not inlinable: graph_populate_names/57 -> malloc/68, function body not available
+src/graph.c:49:5: missed:   not inlinable: graph_populate_names/57 -> __assert_fail/66, function body not available
+src/graph.c:48:5: missed:   not inlinable: graph_populate_names/57 -> __assert_fail/66, function body not available
+src/graph.c:47:5: missed:   not inlinable: graph_populate_names/57 -> __assert_fail/66, function body not available
+src/graph.c:46:5: missed:   not inlinable: graph_populate_names/57 -> __assert_fail/66, function body not available
+src/graph.c:45:5: missed:   not inlinable: graph_populate_names/57 -> __assert_fail/66, function body not available
+src/graph.c:31:9: missed:   not inlinable: uniques_from_sorted/56 -> __assert_fail/66, function body not available
+src/graph.c:29:5: missed:   not inlinable: uniques_from_sorted/56 -> __assert_fail/66, function body not available
+src/graph.c:28:5: missed:   not inlinable: uniques_from_sorted/56 -> __assert_fail/66, function body not available
+src/graph.c:27:5: missed:   not inlinable: uniques_from_sorted/56 -> __assert_fail/66, function body not available
+src/graph.c:15:28: missed:   not inlinable: graph_malloc/54 -> malloc/68, function body not available
+src/graph.c:14:28: missed:   not inlinable: graph_malloc/54 -> malloc/68, function body not available
+src/graph.c:13:28: missed:   not inlinable: graph_malloc/54 -> malloc/68, function body not available
+src/graph.c:12:28: missed:   not inlinable: graph_malloc/54 -> malloc/68, function body not available
+src/graph.c:10:5: missed:   not inlinable: graph_malloc/54 -> __assert_fail/66, function body not available
+src/graph.c:143:16: optimized:  Inlined maximum_i32/60 into graph_new/62 which now has time 146.099462 and size 52, net change of -7.
+src/graph.c:137:17: optimized:  Inlined graph_malloc/54 into graph_new/62 which now has time 189.083862 and size 73, net change of -6.
+src/graph.c:141:5: optimized:  Inlined graph_populate_degrees/59 into graph_new/62 which now has time 417.008921 and size 129, net change of -9.
+src/graph.c:54:18: optimized:  Inlined uniques_from_sorted/56 into graph_populate_names/57 which now has time 416.317860 and size 124, net change of -9.
+src/graph.c:142:5: optimized:  Inlined graph_populate_neighbors/61 into graph_new/62 which now has time 1313.040911 and size 252, net change of -10.
+src/graph.c:140:5: optimized:  Inlined graph_populate_names/57 into graph_new/62 which now has time 1712.367767 and size 367, net change of -9.
+Unit growth for small function inlining: 508->458 (-10%)
+
+Inlined 11 calls, eliminated 6 functions
+
+src/graph.c:60:12: missed: couldn't vectorize loop
+src/graph.c:60:12: missed: not vectorized: control flow in loop.
+/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:29:9: missed: couldn't vectorize loop
+/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:29:9: missed: not vectorized: control flow in loop.
+src/graph.c:60:12: note: vectorized 0 loops in function.
+src/graph.c:22:9: missed: failed: evolution of base is not affine.
+src/graph.c:61:5: missed: statement clobbers memory: __assert_fail ("g", "src/graph.c", 61, &__PRETTY_FUNCTION__);
+src/graph.c:62:5: missed: statement clobbers memory: __assert_fail ("g->names", "src/graph.c", 62, &__PRETTY_FUNCTION__);
+src/graph.c:63:5: missed: statement clobbers memory: __assert_fail ("g->nvertices > 0", "src/graph.c", 63, &__PRETTY_FUNCTION__);
+src/graph.c:69:5: missed: statement clobbers memory: __assert_fail ("0 <= v && v < g->nvertices", "src/graph.c", 69, &__PRETTY_FUNCTION__);
+src/graph.c:66:5: missed: statement clobbers memory: __assert_fail ("ptr != NULL", "src/graph.c", 66, &__PRETTY_FUNCTION__);
+src/graph.c:37:29: missed: failed: evolution of base is not affine.
+src/graph.c:37:29: missed: failed: evolution of base is not affine.
+src/graph.c:94:5: optimized: loop vectorized using 32 byte vectors
+src/graph.c:129:9: missed: couldn't vectorize loop
+src/graph.c:129:9: missed: not vectorized: control flow in loop.
+src/graph.c:117:5: missed: couldn't vectorize loop
+src/graph.c:117:5: missed: not vectorized: number of iterations cannot be computed.
+src/graph.c:111:5: missed: couldn't vectorize loop
+src/graph.c:111:5: missed: not vectorized: latch block not empty.
+src/graph.c:82:5: missed: couldn't vectorize loop
+src/graph.c:82:5: missed: not vectorized: number of iterations cannot be computed.
+src/graph.c:35:5: missed: couldn't vectorize loop
+src/graph.c:37:29: missed: not vectorized: not suitable for scatter store .MASK_STORE (_163, 32B, _250, _155);
+src/graph.c:31:9: missed: couldn't vectorize loop
+src/graph.c:31:9: missed: not vectorized: control flow in loop.
+src/graph.c:133:9: note: vectorized 1 loops in function.
+src/graph.c:121:18: missed: statement clobbers memory: v1_62 = vertex (new_graph_132, name1_57);
+src/graph.c:112:44: missed: failed: evolution of base is not affine.
+src/graph.c:112:27: missed: statement clobbers memory: _46 = malloc (_43);
+src/graph.c:84:17: missed: statement clobbers memory: v_109 = vertex (new_graph_132, name_108);
+src/graph.c:37:29: missed: failed: evolution of base is not affine.
+src/graph.c:94:5: optimized: loop with 6 iterations completely unrolled (header execution count 411957893)
+src/graph.c:135:18: missed: statement clobbers memory: edges_10 = scan_graph (STREAM_8(D), &nvertices, &nedges);
+src/graph.c:10:5: missed: statement clobbers memory: __assert_fail ("nvertices > 0", "src/graph.c", 10, &__PRETTY_FUNCTION__);
+src/graph.c:12:28: missed: statement clobbers memory: new_graph_132 = malloc (40);
+src/graph.c:13:28: missed: statement clobbers memory: _135 = malloc (_134);
+src/graph.c:14:28: missed: statement clobbers memory: _137 = malloc (_136);
+src/graph.c:15:28: missed: statement clobbers memory: _138 = malloc (_134);
+src/graph.c:46:5: note: ***** Re-trying analysis with vector size 16
+src/graph.c:46:5: missed: statement clobbers memory: __assert_fail ("g->names", "src/graph.c", 46, &__PRETTY_FUNCTION__);
+src/graph.c:47:5: missed: statement clobbers memory: __assert_fail ("g->nedges > 0", "src/graph.c", 47, &__PRETTY_FUNCTION__);
+src/graph.c:48:5: missed: statement clobbers memory: __assert_fail ("g->nvertices > 0", "src/graph.c", 48, &__PRETTY_FUNCTION__);
+src/graph.c:49:5: missed: statement clobbers memory: __assert_fail ("edges", "src/graph.c", 49, &__PRETTY_FUNCTION__);
+src/graph.c:51:29: missed: statement clobbers memory: non_unique_names_125 = malloc (_124);
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:34:10: missed: statement clobbers memory: __builtin_memcpy (non_unique_names_125, edges_10, _124);
+src/graph.c:53:5: missed: statement clobbers memory: qsort (non_unique_names_125, _123, 4, cmp_i32);
+src/graph.c:27:5: missed: statement clobbers memory: __assert_fail ("dst", "src/graph.c", 27, &__PRETTY_FUNCTION__);
+src/graph.c:29:5: missed: statement clobbers memory: __assert_fail ("n > 0", "src/graph.c", 29, &__PRETTY_FUNCTION__);
+src/graph.c:31:9: missed: statement clobbers memory: __assert_fail ("SRC[i] <= SRC[i+1]", "src/graph.c", 31, &__PRETTY_FUNCTION__);
+src/graph.c:56:5: missed: statement clobbers memory: free (non_unique_names_125);
+src/graph.c:57:5: missed: statement clobbers memory: __assert_fail ("nnames == g->nvertices", "src/graph.c", 57, &__PRETTY_FUNCTION__);
+src/graph.c:76:5: missed: statement clobbers memory: __assert_fail ("g->degrees", "src/graph.c", 76, &__PRETTY_FUNCTION__);
+src/graph.c:77:5: missed: statement clobbers memory: __assert_fail ("g->nedges > 0", "src/graph.c", 77, &__PRETTY_FUNCTION__);
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed: statement clobbers memory: __builtin_memset (_98, 0, _102);
+src/graph.c:84:17: missed: statement clobbers memory: v_109 = vertex (new_graph_132, name_108);
+src/graph.c:105:5: missed: statement clobbers memory: __assert_fail ("g->degrees", "src/graph.c", 105, &__PRETTY_FUNCTION__);
+src/graph.c:106:5: missed: statement clobbers memory: __assert_fail ("g->neighbors", "src/graph.c", 106, &__PRETTY_FUNCTION__);
+src/graph.c:107:5: missed: statement clobbers memory: __assert_fail ("g->nvertices > 0", "src/graph.c", 107, &__PRETTY_FUNCTION__);
+src/graph.c:108:5: missed: statement clobbers memory: __assert_fail ("g->nedges > 0", "src/graph.c", 108, &__PRETTY_FUNCTION__);
+src/graph.c:112:27: missed: statement clobbers memory: _46 = malloc (_43);
+src/graph.c:114:23: missed: statement clobbers memory: nneighbors_50 = malloc (_49);
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed: statement clobbers memory: __builtin_memset (nneighbors_50, 0, _49);
+src/graph.c:121:18: missed: statement clobbers memory: v1_62 = vertex (new_graph_132, name1_57);
+src/graph.c:122:18: missed: statement clobbers memory: v2_63 = vertex (new_graph_132, name2_61);
+src/graph.c:130:5: missed: statement clobbers memory: free (nneighbors_50);
+src/graph.c:129:9: missed: statement clobbers memory: __assert_fail ("nneighbors[i] == g->degrees[i]", "src/graph.c", 129, &__PRETTY_FUNCTION__);
+src/graph.c:90:5: missed: statement clobbers memory: __assert_fail ("arr", "src/graph.c", 90, &__PRETTY_FUNCTION__);
+src/graph.c:91:5: missed: statement clobbers memory: __assert_fail ("n > 0", "src/graph.c", 91, &__PRETTY_FUNCTION__);
+src/graph.c:145:5: missed: statement clobbers memory: free (edges_10);
+src/graph.c:150:5: missed: couldn't vectorize loop
+src/graph.c:150:5: missed: not vectorized: number of iterations cannot be computed.
+src/graph.c:149:6: note: vectorized 0 loops in function.
+src/graph.c:151:9: missed: failed: evolution of base is not affine.
+src/graph.c:151:9: missed: statement clobbers memory: free (_5);
+src/graph.c:151:9: missed: statement clobbers memory: free (_5);
+src/graph.c:152:5: missed: statement clobbers memory: free (_7);
+src/graph.c:153:5: missed: statement clobbers memory: free (_8);
+src/graph.c:154:5: missed: statement clobbers memory: free (_9);
+src/graph.c:155:5: missed: statement clobbers memory: free (g_13(D));
+src/greedy.c:26:5: optimized:   Inlining memset/20 into bitarray_clear/55 (always_inline).
+src/greedy.c:76:13: note: Considering inline candidate bitarray_set/56.
+src/greedy.c:76:13: missed:   will not early inline: greedy._omp_fn.0/60->bitarray_set/56, growth 15 exceeds --param early-inlining-insns
+src/greedy.c:66:5: optimized:   Inlining memset/20 into greedy/59 (always_inline).
+src/greedy.c:87:12: note: Considering inline candidate maximum_i32/58.
+src/greedy.c:87:12: missed:   will not early inline: greedy/59->maximum_i32/58, growth 18 exceeds --param early-inlining-insns
+src/greedy.c:80:21: note: Considering inline candidate bitarray_find_first_zero/57.
+src/greedy.c:80:21: missed:   will not early inline: greedy/59->bitarray_find_first_zero/57, growth 14 exceeds --param early-inlining-insns divided by number of calls
+src/greedy.c:79:9: note: Considering inline candidate bitarray_set/56.
+src/greedy.c:79:9: missed:   will not early inline: greedy/59->bitarray_set/56, growth 8 exceeds --param early-inlining-insns divided by number of calls
+src/greedy.c:71:9: note: Considering inline candidate bitarray_clear/55.
+src/greedy.c:71:9: missed:   will not early inline: greedy/59->bitarray_clear/55, growth 19 exceeds --param early-inlining-insns
+src/greedy.c:67:35: note: Considering inline candidate bitarray_new/54.
+src/greedy.c:67:35: missed:   will not early inline: greedy/59->bitarray_new/54, growth 10 exceeds --param early-inlining-insns divided by number of calls
+src/greedy.c:30:5: missed:   not inlinable: bitarray_set.constprop/78 -> __assert_fail/63, function body not available
+missed:   not inlinable: bitarray_set.constprop/78 -> __builtin_unreachable/79, unreachable
+src/greedy.c:31:5: missed:   not inlinable: bitarray_set.part.0/77 -> __assert_fail/63, function body not available
+missed:   not inlinable: greedy._omp_fn.0/60 -> __builtin_omp_get_thread_num/62, function body not available
+missed:   not inlinable: greedy._omp_fn.0/60 -> __builtin_omp_get_num_threads/61, function body not available
+src/greedy.c:86:5: missed:   not inlinable: greedy/59 -> free/66, function body not available
+src/greedy.c:84:9: missed:   not inlinable: greedy/59 -> __assert_fail/63, function body not available
+missed:   not inlinable: greedy/59 -> __builtin_GOMP_parallel/65, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: greedy/59 -> __builtin___memset_chk/68, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: greedy/59 -> __builtin_object_size/67, function body not available
+src/greedy.c:64:9: missed:   not inlinable: greedy/59 -> __assert_fail/63, function body not available
+src/greedy.c:50:5: missed:   not inlinable: maximum_i32/58 -> __assert_fail/63, function body not available
+src/greedy.c:49:5: missed:   not inlinable: maximum_i32/58 -> __assert_fail/63, function body not available
+src/greedy.c:43:9: missed:   not inlinable: bitarray_find_first_zero/57 -> __builtin_ctzll/74, function body not available
+src/greedy.c:39:5: missed:   not inlinable: bitarray_find_first_zero/57 -> __assert_fail/63, function body not available
+src/greedy.c:30:5: missed:   not inlinable: bitarray_set/56 -> __assert_fail/63, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: bitarray_clear/55 -> __builtin___memset_chk/68, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: bitarray_clear/55 -> __builtin_object_size/67, function body not available
+src/greedy.c:23:5: missed:   not inlinable: bitarray_clear/55 -> __assert_fail/63, function body not available
+src/greedy.c:22:5: missed:   not inlinable: bitarray_clear/55 -> __assert_fail/63, function body not available
+src/greedy.c:16:17: missed:   not inlinable: bitarray_new/54 -> malloc/70, function body not available
+src/greedy.c:13:5: missed:   not inlinable: bitarray_new/54 -> __assert_fail/63, function body not available
+src/greedy.c:79:9: optimized:  Inlined bitarray_set.constprop/78 into greedy/59 which now has time 1118.639212 and size 93, net change of -6.
+src/greedy.c:80:21: optimized:  Inlined bitarray_find_first_zero/57 into greedy/59 which now has time 1481.364162 and size 107, net change of -6.
+src/greedy.c:76:13: optimized:  Inlined bitarray_set/80 into greedy._omp_fn.0/60 which now has time 165.805454 and size 56, net change of +15.
+src/greedy.c:71:9: optimized:  Inlined bitarray_clear/55 into greedy/59 which now has time 1538.764601 and size 126, net change of -6.
+src/greedy.c:67:35: optimized:  Inlined bitarray_new/54 into greedy/59 which now has time 1543.661112 and size 136, net change of -6.
+src/greedy.c:87:12: optimized:  Inlined maximum_i32/58 into greedy/59 which now has time 1591.715811 and size 154, net change of -7.
+optimized:  Inlined bitarray_set.part.0/81 into bitarray_set/80 which now has time 14.000800 and size 21, net change of +4.
+optimized:  Inlined bitarray_set.part.0/77 into bitarray_set/56 which now has time 14.002399 and size 25, net change of -3.
+Unit growth for small function inlining: 254->239 (-6%)
+
+Inlined 10 calls, eliminated 6 functions
+
+src/greedy.c:75:21: missed: couldn't vectorize loop
+src/greedy.c:75:21: missed: not vectorized: control flow in loop.
+src/greedy.c:73:17: note: vectorized 0 loops in function.
+src/greedy.c:76:13: missed: failed: evolution of base is not affine.
+src/greedy.c:33:18: missed: failed: evolution of base is not affine.
+src/greedy.c:33:18: missed: failed: evolution of base is not affine.
+src/greedy.c:30:5: missed: statement clobbers memory: __assert_fail ("bits", "src/greedy.c", 30, &__PRETTY_FUNCTION__);
+src/greedy.c:31:5: missed: statement clobbers memory: __assert_fail ("i >= 0", "src/greedy.c", 31, &__PRETTY_FUNCTION__);
+src/greedy.c:53:5: optimized: loop vectorized using 32 byte vectors
+src/greedy.c:84:9: missed: couldn't vectorize loop
+src/greedy.c:84:9: missed: not vectorized: control flow in loop.
+src/greedy.c:23:5: missed: couldn't vectorize loop
+src/greedy.c:23:5: missed: not vectorized: control flow in loop.
+src/greedy.c:42:5: missed: couldn't vectorize loop
+src/greedy.c:42:5: missed: not vectorized: number of iterations cannot be computed.
+src/greedy.c:64:9: missed: couldn't vectorize loop
+src/greedy.c:64:9: missed: not vectorized: control flow in loop.
+src/greedy.c:62:5: note: vectorized 1 loops in function.
+src/greedy.c:53:5: optimized: loop with 6 iterations completely unrolled (header execution count 14897958)
+src/greedy.c:64:9: missed: statement clobbers memory: __assert_fail ("0 <= ORDER[i] && ORDER[i] < g->nvertices", "src/greedy.c", 64, &__PRETTY_FUNCTION__);
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed: statement clobbers memory: __builtin_memset (colors_36(D), 0, _8);
+src/greedy.c:13:5: missed: statement clobbers memory: __assert_fail ("nbits > 0", "src/greedy.c", 13, &__PRETTY_FUNCTION__);
+src/greedy.c:16:17: missed: statement clobbers memory: bits_63 = malloc (_62);
+src/greedy.c:22:5: missed: statement clobbers memory: __assert_fail ("bits", "src/greedy.c", 22, &__PRETTY_FUNCTION__);
+src/greedy.c:23:5: missed: statement clobbers memory: __assert_fail ("nbits > 0", "src/greedy.c", 23, &__PRETTY_FUNCTION__);
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed: statement clobbers memory: __builtin_memset (bits_63, 0, _87);
+src/greedy.c:62:5: missed: statement clobbers memory: __builtin_GOMP_parallel (greedy._omp_fn.0, &.omp_data_o.1, 0, 0);
+src/greedy.c:73:17: note: ***** Re-trying analysis with vector size 16
+src/greedy.c:62:5: missed: statement clobbers memory: __builtin_GOMP_parallel (greedy._omp_fn.0, &.omp_data_o.1, 0, 0);
+src/greedy.c:73:17: note: SLPing BB part
+src/greedy.c:73:17: note: ------>vectorizing SLP node starting from: .omp_data_o.1.g = g_35(D);
+src/greedy.c:73:17: note: vect_is_simple_use: operand g_35(D), type of def: external
+src/greedy.c:73:17: note: vect_is_simple_use: operand colors_36(D), type of def: external
+src/greedy.c:73:17: note: conflicting alias set types.
+src/greedy.c:73:17: note: transform store. ncopies = 1
+src/greedy.c:73:17: note: created new init_stmt: vect_cst__180 = _179;
+src/greedy.c:73:17: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.1.g
+src/greedy.c:73:17: note: created &.omp_data_o.1.g
+src/greedy.c:73:17: note: add new stmt: MEM[(void *)&.omp_data_o.1] = vect_cst__180;
+src/greedy.c:73:17: note: vectorizing stmts using SLP.
+src/greedy.c:73:17: optimized: basic block part vectorized using 16 byte vectors
+src/greedy.c:42:5: note: basic block vectorized
+src/greedy.c:84:9: missed: statement clobbers memory: __assert_fail ("1 <= colors[v] && colors[v] <= g->Delta + 1", "src/greedy.c", 84, &__PRETTY_FUNCTION__);
+src/greedy.c:86:5: missed: statement clobbers memory: free (bits_63);
+src/greedy.c:50:5: missed: statement clobbers memory: __assert_fail ("n > 0", "src/greedy.c", 50, &__PRETTY_FUNCTION__);
+src/greedy.c:86:5: missed: statement clobbers memory: free (bits_63);
+src/main.c:15:5: optimized:   Inlining printf/15 into main/43 (always_inline).
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed:   not inlinable: main/43 -> __printf_chk/48, function body not available
+src/main.c:14:15: missed:   not inlinable: main/43 -> greedy/47, function body not available
+src/main.c:10:18: missed:   not inlinable: main/43 -> malloc/46, function body not available
+src/main.c:9:19: missed:   not inlinable: main/43 -> malloc/46, function body not available
+src/main.c:8:17: missed:   not inlinable: main/43 -> graph_new/45, function body not available
+Unit growth for small function inlining: 31->31 (0%)
+
+Inlined 1 calls, eliminated 0 functions
+
+src/main.c:11:5: missed: couldn't vectorize loop
+src/main.c:11:5: missed: not vectorized: number of iterations cannot be computed.
+src/main.c:7:5: note: vectorized 0 loops in function.
+src/main.c:8:17: missed: statement clobbers memory: g_13 = graph_new (stdin.0_1);
+src/main.c:9:19: missed: statement clobbers memory: colors_15 = malloc (_4);
+src/main.c:10:18: missed: statement clobbers memory: order_17 = malloc (_4);
+src/main.c:14:15: missed: statement clobbers memory: chi_19 = greedy (g_13, order_17, colors_15);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed: statement clobbers memory: __printf_chk (1, "chi:%d\n", chi_19);
+src/graph_io.c:14:24: optimized:   Inlining fgets/20 into ignore_comment_lines/54 (always_inline).
+src/graph_io.c:62:5: note: Considering inline candidate scan_edges/56.
+src/graph_io.c:62:5: missed:   will not early inline: scan_graph/57->scan_edges/56, growth 44 exceeds --param early-inlining-insns
+src/graph_io.c:59:5: note: Considering inline candidate scan_order_and_size/55.
+src/graph_io.c:59:5: missed:   will not early inline: scan_graph/57->scan_order_and_size/55, growth 17 exceeds --param early-inlining-insns
+src/graph_io.c:58:5: note: Considering inline candidate ignore_comment_lines/54.
+src/graph_io.c:58:5: missed:   not inlinable: scan_graph/57 -> ignore_comment_lines/54, --param large-stack-frame-growth limit reached
+src/graph_io.c:69:5: missed:   not inlinable: scan_graph/57 -> __assert_fail/58, function body not available
+src/graph_io.c:68:5: missed:   not inlinable: scan_graph/57 -> __assert_fail/58, function body not available
+src/graph_io.c:67:5: missed:   not inlinable: scan_graph/57 -> __assert_fail/58, function body not available
+src/graph_io.c:61:18: missed:   not inlinable: scan_graph/57 -> malloc/60, function body not available
+src/graph_io.c:58:5: missed:   not inlinable: scan_graph/57 -> ignore_comment_lines/54, --param large-stack-frame-growth limit reached
+src/graph_io.c:55:5: missed:   not inlinable: scan_graph/57 -> __assert_fail/58, function body not available
+src/graph_io.c:54:5: missed:   not inlinable: scan_graph/57 -> __assert_fail/58, function body not available
+src/graph_io.c:53:5: missed:   not inlinable: scan_graph/57 -> __assert_fail/58, function body not available
+src/graph_io.c:45:9: missed:   not inlinable: scan_edges/56 -> __assert_fail/58, function body not available
+src/graph_io.c:44:24: missed:   not inlinable: scan_edges/56 -> fscanf/70, function body not available
+src/graph_io.c:38:5: missed:   not inlinable: scan_edges/56 -> __assert_fail/58, function body not available
+src/graph_io.c:37:5: missed:   not inlinable: scan_edges/56 -> __assert_fail/58, function body not available
+src/graph_io.c:36:5: missed:   not inlinable: scan_edges/56 -> __assert_fail/58, function body not available
+src/graph_io.c:32:5: missed:   not inlinable: scan_order_and_size/55 -> __assert_fail/58, function body not available
+src/graph_io.c:30:24: missed:   not inlinable: scan_order_and_size/55 -> fscanf/70, function body not available
+src/graph_io.c:27:5: missed:   not inlinable: scan_order_and_size/55 -> __assert_fail/58, function body not available
+src/graph_io.c:26:5: missed:   not inlinable: scan_order_and_size/55 -> __assert_fail/58, function body not available
+src/graph_io.c:25:5: missed:   not inlinable: scan_order_and_size/55 -> __assert_fail/58, function body not available
+src/graph_io.c:21:5: missed:   not inlinable: ignore_comment_lines/54 -> __assert_fail/58, function body not available
+src/graph_io.c:20:5: missed:   not inlinable: ignore_comment_lines/54 -> __assert_fail/58, function body not available
+src/graph_io.c:18:18: missed:   not inlinable: ignore_comment_lines/54 -> fseek/63, function body not available
+src/graph_io.c:18:33: missed:   not inlinable: ignore_comment_lines/54 -> strlen/62, function body not available
+src/graph_io.c:15:9: missed:   not inlinable: ignore_comment_lines/54 -> __assert_fail/58, function body not available
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:265:10: missed:   not inlinable: ignore_comment_lines/54 -> __fgets_alias/68, function body not available
+src/graph_io.c:10:5: missed:   not inlinable: ignore_comment_lines/54 -> __assert_fail/58, function body not available
+src/graph_io.c:59:5: optimized:  Inlined scan_order_and_size/55 into scan_graph/57 which now has time 77.940803 and size 93, net change of -11.
+src/graph_io.c:62:5: optimized:  Inlined scan_edges/56 into scan_graph/57 which now has time 600.697952 and size 137, net change of -7.
+Unit growth for small function inlining: 204->186 (-9%)
+src/graph_io.c:58:5: missed:   not inlinable: scan_graph/57 -> ignore_comment_lines/54, --param large-stack-frame-growth limit reached
+src/graph_io.c:58:5: missed:   not inlinable: scan_graph/57 -> ignore_comment_lines/54, --param large-stack-frame-growth limit reached
+
+Inlined 3 calls, eliminated 2 functions
+
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:265:10: missed: couldn't vectorize loop
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:265:10: missed: not vectorized: control flow in loop.
+src/graph_io.c:9:13: note: vectorized 0 loops in function.
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:265:10: missed: statement clobbers memory: _16 = __fgets_alias (&line, 1024, STREAM_7(D));
+src/graph_io.c:10:5: missed: statement clobbers memory: __assert_fail ("STREAM", "src/graph_io.c", 10, &__PRETTY_FUNCTION__);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:265:10: missed: statement clobbers memory: _16 = __fgets_alias (&line, 1024, STREAM_7(D));
+src/graph_io.c:15:9: missed: statement clobbers memory: __assert_fail ("error1", "src/graph_io.c", 15, &__PRETTY_FUNCTION__);
+src/graph_io.c:18:33: missed: statement clobbers memory: _2 = strlen (&line);
+src/graph_io.c:18:18: missed: statement clobbers memory: error2_12 = fseek (STREAM_7(D), _4, 1);
+src/graph_io.c:20:5: missed: statement clobbers memory: __assert_fail ("!error2", "src/graph_io.c", 20, &__PRETTY_FUNCTION__);
+src/graph_io.c:21:5: missed: statement clobbers memory: __assert_fail ("line[0] == \'p\'", "src/graph_io.c", 21, &__PRETTY_FUNCTION__);
+src/graph_io.c:42:20: missed: couldn't vectorize loop
+src/graph_io.c:42:20: missed: not vectorized: control flow in loop.
+src/graph_io.c:52:6: note: vectorized 0 loops in function.
+src/graph_io.c:44:24: missed: statement clobbers memory: nassignments_27 = fscanf (STREAM_8(D), &TEMPLATE, &name1, &name2);
+src/graph_io.c:53:5: missed: statement clobbers memory: __assert_fail ("STREAM", "src/graph_io.c", 53, &__PRETTY_FUNCTION__);
+src/graph_io.c:54:5: missed: statement clobbers memory: __assert_fail ("ptr_nvertices", "src/graph_io.c", 54, &__PRETTY_FUNCTION__);
+src/graph_io.c:55:5: missed: statement clobbers memory: __assert_fail ("ptr_nedges", "src/graph_io.c", 55, &__PRETTY_FUNCTION__);
+src/graph_io.c:58:5: missed: statement clobbers memory: ignore_comment_lines (STREAM_8(D));
+src/graph_io.c:30:24: missed: statement clobbers memory: nassignments_39 = fscanf (STREAM_8(D), &TEMPLATE, &nvertices, &nedges);
+src/graph_io.c:32:5: missed: statement clobbers memory: __assert_fail ("nassignments == 2", "src/graph_io.c", 32, &__PRETTY_FUNCTION__);
+src/graph_io.c:61:18: missed: statement clobbers memory: edges_18 = malloc (_4);
+src/graph_io.c:37:5: missed: statement clobbers memory: __assert_fail ("edges", "src/graph_io.c", 37, &__PRETTY_FUNCTION__);
+src/graph_io.c:38:5: missed: statement clobbers memory: __assert_fail ("nedges > 0", "src/graph_io.c", 38, &__PRETTY_FUNCTION__);
+src/graph_io.c:44:24: missed: statement clobbers memory: nassignments_27 = fscanf (STREAM_8(D), &TEMPLATE, &name1, &name2);
+src/graph_io.c:45:9: missed: statement clobbers memory: __assert_fail ("nassignments == 2", "src/graph_io.c", 45, &__PRETTY_FUNCTION__);
+src/graph_io.c:40:5: note: ***** Re-trying analysis with vector size 16
+src/graph_io.c:68:5: missed: statement clobbers memory: __assert_fail ("nvertices > 0", "src/graph_io.c", 68, &__PRETTY_FUNCTION__);
+src/graph_io.c:69:5: missed: statement clobbers memory: __assert_fail ("nedges > 0", "src/graph_io.c", 69, &__PRETTY_FUNCTION__);
+src/graph.c:65:16: optimized:   Inlining bsearch/9 into vertex/58 (always_inline).
+/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:33:23: note: Considering inline candidate cmp_i32/55.
+/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:33:23: optimized:  Inlining cmp_i32/55 into vertex/58.
+src/graph.c:81:5: optimized:   Inlining memset/20 into graph_populate_degrees/59 (always_inline).
+src/graph.c:84:17: note: Considering inline candidate vertex/58.
+src/graph.c:84:17: missed:   will not early inline: graph_populate_degrees/59->vertex/58, growth 51 exceeds --param early-inlining-insns
+src/graph.c:115:5: optimized:   Inlining memset/20 into graph_populate_neighbors/61 (always_inline).
+src/graph.c:122:18: note: Considering inline candidate vertex/58.
+src/graph.c:122:18: missed:   will not early inline: graph_populate_neighbors/61->vertex/58, growth 51 exceeds --param early-inlining-insns
+src/graph.c:121:18: note: Considering inline candidate vertex/58.
+src/graph.c:121:18: missed:   will not early inline: graph_populate_neighbors/61->vertex/58, growth 51 exceeds --param early-inlining-insns
+src/graph.c:52:5: optimized:   Inlining memcpy/18 into graph_populate_names/57 (always_inline).
+src/graph.c:54:18: note: Considering inline candidate uniques_from_sorted/56.
+src/graph.c:54:18: missed:   will not early inline: graph_populate_names/57->uniques_from_sorted/56, growth 50 exceeds --param early-inlining-insns
+src/graph.c:143:16: note: Considering inline candidate maximum_i32/60.
+src/graph.c:143:16: missed:   will not early inline: graph_new/62->maximum_i32/60, growth 18 exceeds --param early-inlining-insns
+src/graph.c:142:5: note: Considering inline candidate graph_populate_neighbors/61.
+src/graph.c:142:5: missed:   will not early inline: graph_new/62->graph_populate_neighbors/61, growth 123 exceeds --param early-inlining-insns
+src/graph.c:141:5: note: Considering inline candidate graph_populate_degrees/59.
+src/graph.c:141:5: missed:   will not early inline: graph_new/62->graph_populate_degrees/59, growth 57 exceeds --param early-inlining-insns
+src/graph.c:140:5: note: Considering inline candidate graph_populate_names/57.
+src/graph.c:140:5: missed:   will not early inline: graph_new/62->graph_populate_names/57, growth 65 exceeds --param early-inlining-insns
+src/graph.c:137:17: note: Considering inline candidate graph_malloc/54.
+src/graph.c:137:17: missed:   will not early inline: graph_new/62->graph_malloc/54, growth 21 exceeds --param early-inlining-insns
+src/graph.c:155:5: missed:   not inlinable: graph_destroy/63 -> free/65, function body not available
+src/graph.c:154:5: missed:   not inlinable: graph_destroy/63 -> free/65, function body not available
+src/graph.c:153:5: missed:   not inlinable: graph_destroy/63 -> free/65, function body not available
+src/graph.c:152:5: missed:   not inlinable: graph_destroy/63 -> free/65, function body not available
+src/graph.c:151:9: missed:   not inlinable: graph_destroy/63 -> free/65, function body not available
+src/graph.c:145:5: missed:   not inlinable: graph_new/62 -> free/65, function body not available
+src/graph.c:135:18: missed:   not inlinable: graph_new/62 -> scan_graph/64, function body not available
+src/graph.c:130:5: missed:   not inlinable: graph_populate_neighbors/61 -> free/65, function body not available
+src/graph.c:129:9: missed:   not inlinable: graph_populate_neighbors/61 -> __assert_fail/66, function body not available
+src/graph.c:122:18: missed:   not inlinable: graph_populate_neighbors/61 -> vertex/58, --param max-inline-insns-auto limit reached
+src/graph.c:121:18: missed:   not inlinable: graph_populate_neighbors/61 -> vertex/58, --param max-inline-insns-auto limit reached
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: graph_populate_neighbors/61 -> __builtin___memset_chk/75, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: graph_populate_neighbors/61 -> __builtin_object_size/71, function body not available
+src/graph.c:114:23: missed:   not inlinable: graph_populate_neighbors/61 -> malloc/68, function body not available
+src/graph.c:112:27: missed:   not inlinable: graph_populate_neighbors/61 -> malloc/68, function body not available
+src/graph.c:109:5: missed:   not inlinable: graph_populate_neighbors/61 -> __assert_fail/66, function body not available
+src/graph.c:108:5: missed:   not inlinable: graph_populate_neighbors/61 -> __assert_fail/66, function body not available
+src/graph.c:107:5: missed:   not inlinable: graph_populate_neighbors/61 -> __assert_fail/66, function body not available
+src/graph.c:106:5: missed:   not inlinable: graph_populate_neighbors/61 -> __assert_fail/66, function body not available
+src/graph.c:105:5: missed:   not inlinable: graph_populate_neighbors/61 -> __assert_fail/66, function body not available
+src/graph.c:104:5: missed:   not inlinable: graph_populate_neighbors/61 -> __assert_fail/66, function body not available
+src/graph.c:91:5: missed:   not inlinable: maximum_i32/60 -> __assert_fail/66, function body not available
+src/graph.c:90:5: missed:   not inlinable: maximum_i32/60 -> __assert_fail/66, function body not available
+src/graph.c:84:17: missed:   not inlinable: graph_populate_degrees/59 -> vertex/58, --param max-inline-insns-auto limit reached
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: graph_populate_degrees/59 -> __builtin___memset_chk/75, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: graph_populate_degrees/59 -> __builtin_object_size/71, function body not available
+src/graph.c:79:5: missed:   not inlinable: graph_populate_degrees/59 -> __assert_fail/66, function body not available
+src/graph.c:78:5: missed:   not inlinable: graph_populate_degrees/59 -> __assert_fail/66, function body not available
+src/graph.c:77:5: missed:   not inlinable: graph_populate_degrees/59 -> __assert_fail/66, function body not available
+src/graph.c:76:5: missed:   not inlinable: graph_populate_degrees/59 -> __assert_fail/66, function body not available
+src/graph.c:75:5: missed:   not inlinable: graph_populate_degrees/59 -> __assert_fail/66, function body not available
+src/graph.c:69:5: missed:   not inlinable: vertex/58 -> __assert_fail/66, function body not available
+src/graph.c:66:5: missed:   not inlinable: vertex/58 -> __assert_fail/66, function body not available
+src/graph.c:63:5: missed:   not inlinable: vertex/58 -> __assert_fail/66, function body not available
+src/graph.c:62:5: missed:   not inlinable: vertex/58 -> __assert_fail/66, function body not available
+src/graph.c:61:5: missed:   not inlinable: vertex/58 -> __assert_fail/66, function body not available
+src/graph.c:57:5: missed:   not inlinable: graph_populate_names/57 -> __assert_fail/66, function body not available
+src/graph.c:56:5: missed:   not inlinable: graph_populate_names/57 -> free/65, function body not available
+src/graph.c:53:5: missed:   not inlinable: graph_populate_names/57 -> qsort/70, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:34:10: missed:   not inlinable: graph_populate_names/57 -> __builtin___memcpy_chk/72, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:34:10: missed:   not inlinable: graph_populate_names/57 -> __builtin_object_size/71, function body not available
+src/graph.c:51:29: missed:   not inlinable: graph_populate_names/57 -> malloc/68, function body not available
+src/graph.c:49:5: missed:   not inlinable: graph_populate_names/57 -> __assert_fail/66, function body not available
+src/graph.c:48:5: missed:   not inlinable: graph_populate_names/57 -> __assert_fail/66, function body not available
+src/graph.c:47:5: missed:   not inlinable: graph_populate_names/57 -> __assert_fail/66, function body not available
+src/graph.c:46:5: missed:   not inlinable: graph_populate_names/57 -> __assert_fail/66, function body not available
+src/graph.c:45:5: missed:   not inlinable: graph_populate_names/57 -> __assert_fail/66, function body not available
+src/graph.c:31:9: missed:   not inlinable: uniques_from_sorted/56 -> __assert_fail/66, function body not available
+src/graph.c:29:5: missed:   not inlinable: uniques_from_sorted/56 -> __assert_fail/66, function body not available
+src/graph.c:28:5: missed:   not inlinable: uniques_from_sorted/56 -> __assert_fail/66, function body not available
+src/graph.c:27:5: missed:   not inlinable: uniques_from_sorted/56 -> __assert_fail/66, function body not available
+src/graph.c:15:28: missed:   not inlinable: graph_malloc/54 -> malloc/68, function body not available
+src/graph.c:14:28: missed:   not inlinable: graph_malloc/54 -> malloc/68, function body not available
+src/graph.c:13:28: missed:   not inlinable: graph_malloc/54 -> malloc/68, function body not available
+src/graph.c:12:28: missed:   not inlinable: graph_malloc/54 -> malloc/68, function body not available
+src/graph.c:10:5: missed:   not inlinable: graph_malloc/54 -> __assert_fail/66, function body not available
+src/graph.c:143:16: optimized:  Inlined maximum_i32/60 into graph_new/62 which now has time 146.099462 and size 52, net change of -7.
+src/graph.c:137:17: optimized:  Inlined graph_malloc/54 into graph_new/62 which now has time 189.083862 and size 73, net change of -6.
+src/graph.c:141:5: optimized:  Inlined graph_populate_degrees/59 into graph_new/62 which now has time 417.008921 and size 129, net change of -9.
+src/graph.c:54:18: optimized:  Inlined uniques_from_sorted/56 into graph_populate_names/57 which now has time 416.317860 and size 124, net change of -9.
+src/graph.c:142:5: optimized:  Inlined graph_populate_neighbors/61 into graph_new/62 which now has time 1313.040911 and size 252, net change of -10.
+src/graph.c:140:5: optimized:  Inlined graph_populate_names/57 into graph_new/62 which now has time 1712.367767 and size 367, net change of -9.
+Unit growth for small function inlining: 508->458 (-10%)
+
+Inlined 11 calls, eliminated 6 functions
+
+src/graph.c:60:12: missed: couldn't vectorize loop
+src/graph.c:60:12: missed: not vectorized: control flow in loop.
+/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:29:9: missed: couldn't vectorize loop
+/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:29:9: missed: not vectorized: control flow in loop.
+src/graph.c:60:12: note: vectorized 0 loops in function.
+src/graph.c:22:9: missed: failed: evolution of base is not affine.
+src/graph.c:61:5: missed: statement clobbers memory: __assert_fail ("g", "src/graph.c", 61, &__PRETTY_FUNCTION__);
+src/graph.c:62:5: missed: statement clobbers memory: __assert_fail ("g->names", "src/graph.c", 62, &__PRETTY_FUNCTION__);
+src/graph.c:63:5: missed: statement clobbers memory: __assert_fail ("g->nvertices > 0", "src/graph.c", 63, &__PRETTY_FUNCTION__);
+src/graph.c:69:5: missed: statement clobbers memory: __assert_fail ("0 <= v && v < g->nvertices", "src/graph.c", 69, &__PRETTY_FUNCTION__);
+src/graph.c:66:5: missed: statement clobbers memory: __assert_fail ("ptr != NULL", "src/graph.c", 66, &__PRETTY_FUNCTION__);
+src/graph.c:37:29: missed: failed: evolution of base is not affine.
+src/graph.c:37:29: missed: failed: evolution of base is not affine.
+src/graph.c:94:5: optimized: loop vectorized using 32 byte vectors
+src/graph.c:129:9: missed: couldn't vectorize loop
+src/graph.c:129:9: missed: not vectorized: control flow in loop.
+src/graph.c:117:5: missed: couldn't vectorize loop
+src/graph.c:117:5: missed: not vectorized: number of iterations cannot be computed.
+src/graph.c:111:5: missed: couldn't vectorize loop
+src/graph.c:111:5: missed: not vectorized: latch block not empty.
+src/graph.c:82:5: missed: couldn't vectorize loop
+src/graph.c:82:5: missed: not vectorized: number of iterations cannot be computed.
+src/graph.c:35:5: missed: couldn't vectorize loop
+src/graph.c:37:29: missed: not vectorized: not suitable for scatter store .MASK_STORE (_163, 32B, _250, _155);
+src/graph.c:31:9: missed: couldn't vectorize loop
+src/graph.c:31:9: missed: not vectorized: control flow in loop.
+src/graph.c:133:9: note: vectorized 1 loops in function.
+src/graph.c:121:18: missed: statement clobbers memory: v1_62 = vertex (new_graph_132, name1_57);
+src/graph.c:112:44: missed: failed: evolution of base is not affine.
+src/graph.c:112:27: missed: statement clobbers memory: _46 = malloc (_43);
+src/graph.c:84:17: missed: statement clobbers memory: v_109 = vertex (new_graph_132, name_108);
+src/graph.c:37:29: missed: failed: evolution of base is not affine.
+src/graph.c:94:5: optimized: loop with 6 iterations completely unrolled (header execution count 411957893)
+src/graph.c:135:18: missed: statement clobbers memory: edges_10 = scan_graph (STREAM_8(D), &nvertices, &nedges);
+src/graph.c:10:5: missed: statement clobbers memory: __assert_fail ("nvertices > 0", "src/graph.c", 10, &__PRETTY_FUNCTION__);
+src/graph.c:12:28: missed: statement clobbers memory: new_graph_132 = malloc (40);
+src/graph.c:13:28: missed: statement clobbers memory: _135 = malloc (_134);
+src/graph.c:14:28: missed: statement clobbers memory: _137 = malloc (_136);
+src/graph.c:15:28: missed: statement clobbers memory: _138 = malloc (_134);
+src/graph.c:46:5: note: ***** Re-trying analysis with vector size 16
+src/graph.c:46:5: missed: statement clobbers memory: __assert_fail ("g->names", "src/graph.c", 46, &__PRETTY_FUNCTION__);
+src/graph.c:47:5: missed: statement clobbers memory: __assert_fail ("g->nedges > 0", "src/graph.c", 47, &__PRETTY_FUNCTION__);
+src/graph.c:48:5: missed: statement clobbers memory: __assert_fail ("g->nvertices > 0", "src/graph.c", 48, &__PRETTY_FUNCTION__);
+src/graph.c:49:5: missed: statement clobbers memory: __assert_fail ("edges", "src/graph.c", 49, &__PRETTY_FUNCTION__);
+src/graph.c:51:29: missed: statement clobbers memory: non_unique_names_125 = malloc (_124);
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:34:10: missed: statement clobbers memory: __builtin_memcpy (non_unique_names_125, edges_10, _124);
+src/graph.c:53:5: missed: statement clobbers memory: qsort (non_unique_names_125, _123, 4, cmp_i32);
+src/graph.c:27:5: missed: statement clobbers memory: __assert_fail ("dst", "src/graph.c", 27, &__PRETTY_FUNCTION__);
+src/graph.c:29:5: missed: statement clobbers memory: __assert_fail ("n > 0", "src/graph.c", 29, &__PRETTY_FUNCTION__);
+src/graph.c:31:9: missed: statement clobbers memory: __assert_fail ("SRC[i] <= SRC[i+1]", "src/graph.c", 31, &__PRETTY_FUNCTION__);
+src/graph.c:56:5: missed: statement clobbers memory: free (non_unique_names_125);
+src/graph.c:57:5: missed: statement clobbers memory: __assert_fail ("nnames == g->nvertices", "src/graph.c", 57, &__PRETTY_FUNCTION__);
+src/graph.c:76:5: missed: statement clobbers memory: __assert_fail ("g->degrees", "src/graph.c", 76, &__PRETTY_FUNCTION__);
+src/graph.c:77:5: missed: statement clobbers memory: __assert_fail ("g->nedges > 0", "src/graph.c", 77, &__PRETTY_FUNCTION__);
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed: statement clobbers memory: __builtin_memset (_98, 0, _102);
+src/graph.c:84:17: missed: statement clobbers memory: v_109 = vertex (new_graph_132, name_108);
+src/graph.c:105:5: missed: statement clobbers memory: __assert_fail ("g->degrees", "src/graph.c", 105, &__PRETTY_FUNCTION__);
+src/graph.c:106:5: missed: statement clobbers memory: __assert_fail ("g->neighbors", "src/graph.c", 106, &__PRETTY_FUNCTION__);
+src/graph.c:107:5: missed: statement clobbers memory: __assert_fail ("g->nvertices > 0", "src/graph.c", 107, &__PRETTY_FUNCTION__);
+src/graph.c:108:5: missed: statement clobbers memory: __assert_fail ("g->nedges > 0", "src/graph.c", 108, &__PRETTY_FUNCTION__);
+src/graph.c:112:27: missed: statement clobbers memory: _46 = malloc (_43);
+src/graph.c:114:23: missed: statement clobbers memory: nneighbors_50 = malloc (_49);
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed: statement clobbers memory: __builtin_memset (nneighbors_50, 0, _49);
+src/graph.c:121:18: missed: statement clobbers memory: v1_62 = vertex (new_graph_132, name1_57);
+src/graph.c:122:18: missed: statement clobbers memory: v2_63 = vertex (new_graph_132, name2_61);
+src/graph.c:130:5: missed: statement clobbers memory: free (nneighbors_50);
+src/graph.c:129:9: missed: statement clobbers memory: __assert_fail ("nneighbors[i] == g->degrees[i]", "src/graph.c", 129, &__PRETTY_FUNCTION__);
+src/graph.c:90:5: missed: statement clobbers memory: __assert_fail ("arr", "src/graph.c", 90, &__PRETTY_FUNCTION__);
+src/graph.c:91:5: missed: statement clobbers memory: __assert_fail ("n > 0", "src/graph.c", 91, &__PRETTY_FUNCTION__);
+src/graph.c:145:5: missed: statement clobbers memory: free (edges_10);
+src/graph.c:150:5: missed: couldn't vectorize loop
+src/graph.c:150:5: missed: not vectorized: number of iterations cannot be computed.
+src/graph.c:149:6: note: vectorized 0 loops in function.
+src/graph.c:151:9: missed: failed: evolution of base is not affine.
+src/graph.c:151:9: missed: statement clobbers memory: free (_5);
+src/graph.c:151:9: missed: statement clobbers memory: free (_5);
+src/graph.c:152:5: missed: statement clobbers memory: free (_7);
+src/graph.c:153:5: missed: statement clobbers memory: free (_8);
+src/graph.c:154:5: missed: statement clobbers memory: free (_9);
+src/graph.c:155:5: missed: statement clobbers memory: free (g_13(D));
+src/greedy.c:26:5: optimized:   Inlining memset/20 into bitarray_clear/55 (always_inline).
+src/greedy.c:76:13: note: Considering inline candidate bitarray_set/56.
+src/greedy.c:76:13: missed:   will not early inline: greedy._omp_fn.0/60->bitarray_set/56, growth 15 exceeds --param early-inlining-insns
+src/greedy.c:66:5: optimized:   Inlining memset/20 into greedy/59 (always_inline).
+src/greedy.c:87:12: note: Considering inline candidate maximum_i32/58.
+src/greedy.c:87:12: missed:   will not early inline: greedy/59->maximum_i32/58, growth 18 exceeds --param early-inlining-insns
+src/greedy.c:80:21: note: Considering inline candidate bitarray_find_first_zero/57.
+src/greedy.c:80:21: missed:   will not early inline: greedy/59->bitarray_find_first_zero/57, growth 14 exceeds --param early-inlining-insns divided by number of calls
+src/greedy.c:79:9: note: Considering inline candidate bitarray_set/56.
+src/greedy.c:79:9: missed:   will not early inline: greedy/59->bitarray_set/56, growth 8 exceeds --param early-inlining-insns divided by number of calls
+src/greedy.c:71:9: note: Considering inline candidate bitarray_clear/55.
+src/greedy.c:71:9: missed:   will not early inline: greedy/59->bitarray_clear/55, growth 19 exceeds --param early-inlining-insns
+src/greedy.c:67:35: note: Considering inline candidate bitarray_new/54.
+src/greedy.c:67:35: missed:   will not early inline: greedy/59->bitarray_new/54, growth 10 exceeds --param early-inlining-insns divided by number of calls
+src/greedy.c:30:5: missed:   not inlinable: bitarray_set.constprop/78 -> __assert_fail/63, function body not available
+missed:   not inlinable: bitarray_set.constprop/78 -> __builtin_unreachable/79, unreachable
+src/greedy.c:31:5: missed:   not inlinable: bitarray_set.part.0/77 -> __assert_fail/63, function body not available
+missed:   not inlinable: greedy._omp_fn.0/60 -> __builtin_omp_get_thread_num/62, function body not available
+missed:   not inlinable: greedy._omp_fn.0/60 -> __builtin_omp_get_num_threads/61, function body not available
+src/greedy.c:86:5: missed:   not inlinable: greedy/59 -> free/66, function body not available
+src/greedy.c:84:9: missed:   not inlinable: greedy/59 -> __assert_fail/63, function body not available
+missed:   not inlinable: greedy/59 -> __builtin_GOMP_parallel/65, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: greedy/59 -> __builtin___memset_chk/68, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: greedy/59 -> __builtin_object_size/67, function body not available
+src/greedy.c:64:9: missed:   not inlinable: greedy/59 -> __assert_fail/63, function body not available
+src/greedy.c:50:5: missed:   not inlinable: maximum_i32/58 -> __assert_fail/63, function body not available
+src/greedy.c:49:5: missed:   not inlinable: maximum_i32/58 -> __assert_fail/63, function body not available
+src/greedy.c:43:9: missed:   not inlinable: bitarray_find_first_zero/57 -> __builtin_ctzll/74, function body not available
+src/greedy.c:39:5: missed:   not inlinable: bitarray_find_first_zero/57 -> __assert_fail/63, function body not available
+src/greedy.c:30:5: missed:   not inlinable: bitarray_set/56 -> __assert_fail/63, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: bitarray_clear/55 -> __builtin___memset_chk/68, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: bitarray_clear/55 -> __builtin_object_size/67, function body not available
+src/greedy.c:23:5: missed:   not inlinable: bitarray_clear/55 -> __assert_fail/63, function body not available
+src/greedy.c:22:5: missed:   not inlinable: bitarray_clear/55 -> __assert_fail/63, function body not available
+src/greedy.c:16:17: missed:   not inlinable: bitarray_new/54 -> malloc/70, function body not available
+src/greedy.c:13:5: missed:   not inlinable: bitarray_new/54 -> __assert_fail/63, function body not available
+src/greedy.c:79:9: optimized:  Inlined bitarray_set.constprop/78 into greedy/59 which now has time 1118.639212 and size 93, net change of -6.
+src/greedy.c:80:21: optimized:  Inlined bitarray_find_first_zero/57 into greedy/59 which now has time 1481.364162 and size 107, net change of -6.
+src/greedy.c:76:13: optimized:  Inlined bitarray_set/80 into greedy._omp_fn.0/60 which now has time 165.805454 and size 56, net change of +15.
+src/greedy.c:71:9: optimized:  Inlined bitarray_clear/55 into greedy/59 which now has time 1538.764601 and size 126, net change of -6.
+src/greedy.c:67:35: optimized:  Inlined bitarray_new/54 into greedy/59 which now has time 1543.661112 and size 136, net change of -6.
+src/greedy.c:87:12: optimized:  Inlined maximum_i32/58 into greedy/59 which now has time 1591.715811 and size 154, net change of -7.
+optimized:  Inlined bitarray_set.part.0/81 into bitarray_set/80 which now has time 14.000800 and size 21, net change of +4.
+optimized:  Inlined bitarray_set.part.0/77 into bitarray_set/56 which now has time 14.002399 and size 25, net change of -3.
+Unit growth for small function inlining: 254->239 (-6%)
+
+Inlined 10 calls, eliminated 6 functions
+
+src/greedy.c:75:21: missed: couldn't vectorize loop
+src/greedy.c:75:21: missed: not vectorized: control flow in loop.
+src/greedy.c:73:17: note: vectorized 0 loops in function.
+src/greedy.c:76:13: missed: failed: evolution of base is not affine.
+src/greedy.c:33:18: missed: failed: evolution of base is not affine.
+src/greedy.c:33:18: missed: failed: evolution of base is not affine.
+src/greedy.c:30:5: missed: statement clobbers memory: __assert_fail ("bits", "src/greedy.c", 30, &__PRETTY_FUNCTION__);
+src/greedy.c:31:5: missed: statement clobbers memory: __assert_fail ("i >= 0", "src/greedy.c", 31, &__PRETTY_FUNCTION__);
+src/greedy.c:53:5: optimized: loop vectorized using 32 byte vectors
+src/greedy.c:84:9: missed: couldn't vectorize loop
+src/greedy.c:84:9: missed: not vectorized: control flow in loop.
+src/greedy.c:23:5: missed: couldn't vectorize loop
+src/greedy.c:23:5: missed: not vectorized: control flow in loop.
+src/greedy.c:42:5: missed: couldn't vectorize loop
+src/greedy.c:42:5: missed: not vectorized: number of iterations cannot be computed.
+src/greedy.c:64:9: missed: couldn't vectorize loop
+src/greedy.c:64:9: missed: not vectorized: control flow in loop.
+src/greedy.c:62:5: note: vectorized 1 loops in function.
+src/greedy.c:53:5: optimized: loop with 6 iterations completely unrolled (header execution count 14897958)
+src/greedy.c:64:9: missed: statement clobbers memory: __assert_fail ("0 <= ORDER[i] && ORDER[i] < g->nvertices", "src/greedy.c", 64, &__PRETTY_FUNCTION__);
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed: statement clobbers memory: __builtin_memset (colors_36(D), 0, _8);
+src/greedy.c:13:5: missed: statement clobbers memory: __assert_fail ("nbits > 0", "src/greedy.c", 13, &__PRETTY_FUNCTION__);
+src/greedy.c:16:17: missed: statement clobbers memory: bits_63 = malloc (_62);
+src/greedy.c:22:5: missed: statement clobbers memory: __assert_fail ("bits", "src/greedy.c", 22, &__PRETTY_FUNCTION__);
+src/greedy.c:23:5: missed: statement clobbers memory: __assert_fail ("nbits > 0", "src/greedy.c", 23, &__PRETTY_FUNCTION__);
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed: statement clobbers memory: __builtin_memset (bits_63, 0, _87);
+src/greedy.c:62:5: missed: statement clobbers memory: __builtin_GOMP_parallel (greedy._omp_fn.0, &.omp_data_o.1, 0, 0);
+src/greedy.c:73:17: note: ***** Re-trying analysis with vector size 16
+src/greedy.c:62:5: missed: statement clobbers memory: __builtin_GOMP_parallel (greedy._omp_fn.0, &.omp_data_o.1, 0, 0);
+src/greedy.c:73:17: note: SLPing BB part
+src/greedy.c:73:17: note: ------>vectorizing SLP node starting from: .omp_data_o.1.g = g_35(D);
+src/greedy.c:73:17: note: vect_is_simple_use: operand g_35(D), type of def: external
+src/greedy.c:73:17: note: vect_is_simple_use: operand colors_36(D), type of def: external
+src/greedy.c:73:17: note: conflicting alias set types.
+src/greedy.c:73:17: note: transform store. ncopies = 1
+src/greedy.c:73:17: note: created new init_stmt: vect_cst__180 = _179;
+src/greedy.c:73:17: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.1.g
+src/greedy.c:73:17: note: created &.omp_data_o.1.g
+src/greedy.c:73:17: note: add new stmt: MEM[(void *)&.omp_data_o.1] = vect_cst__180;
+src/greedy.c:73:17: note: vectorizing stmts using SLP.
+src/greedy.c:73:17: optimized: basic block part vectorized using 16 byte vectors
+src/greedy.c:42:5: note: basic block vectorized
+src/greedy.c:84:9: missed: statement clobbers memory: __assert_fail ("1 <= colors[v] && colors[v] <= g->Delta + 1", "src/greedy.c", 84, &__PRETTY_FUNCTION__);
+src/greedy.c:86:5: missed: statement clobbers memory: free (bits_63);
+src/greedy.c:50:5: missed: statement clobbers memory: __assert_fail ("n > 0", "src/greedy.c", 50, &__PRETTY_FUNCTION__);
+src/greedy.c:86:5: missed: statement clobbers memory: free (bits_63);
+src/main.c:15:5: optimized:   Inlining printf/15 into main/43 (always_inline).
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed:   not inlinable: main/43 -> __printf_chk/48, function body not available
+src/main.c:14:15: missed:   not inlinable: main/43 -> greedy/47, function body not available
+src/main.c:10:18: missed:   not inlinable: main/43 -> malloc/46, function body not available
+src/main.c:9:19: missed:   not inlinable: main/43 -> malloc/46, function body not available
+src/main.c:8:17: missed:   not inlinable: main/43 -> graph_new/45, function body not available
+Unit growth for small function inlining: 31->31 (0%)
+
+Inlined 1 calls, eliminated 0 functions
+
+src/main.c:11:5: missed: couldn't vectorize loop
+src/main.c:11:5: missed: not vectorized: number of iterations cannot be computed.
+src/main.c:7:5: note: vectorized 0 loops in function.
+src/main.c:8:17: missed: statement clobbers memory: g_13 = graph_new (stdin.0_1);
+src/main.c:9:19: missed: statement clobbers memory: colors_15 = malloc (_4);
+src/main.c:10:18: missed: statement clobbers memory: order_17 = malloc (_4);
+src/main.c:14:15: missed: statement clobbers memory: chi_19 = greedy (g_13, order_17, colors_15);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed: statement clobbers memory: __printf_chk (1, "chi:%d\n", chi_19);

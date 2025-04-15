@@ -5,24 +5,22 @@
             "name": "C Debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/program.exe",
-            "args": [],
+            "program": "${workspaceFolder}/main",
+            "args": ["<", "${workspaceFolder}/graphs/A_1515153016_18"],
             "stopAtEntry": true,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
             "preLaunchTask": "gcc build active file",
-            "sourceFileMap": {
-                "${workspaceFolder}/dict.c": "${workspaceFolder}/dict.c",
-                "${workspaceFolder}/graph.c": "${workspaceFolder}/graph.c",
-                "${workspaceFolder}/graph_io.c": "${workspaceFolder}/graph_io.c",
-                "${workspaceFolder}/main.c": "${workspaceFolder}/main.c",
-                "${workspaceFolder}/names.c": "${workspaceFolder}/names.c",
-                "${workspaceFolder}/stack.c": "${workspaceFolder}/stack.c",
-                "${workspaceFolder}/vertex.c": "${workspaceFolder}/vertex.c",
-            }
+            "miDebuggerPath": "gdb",
         }
     ]
 }

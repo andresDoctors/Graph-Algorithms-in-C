@@ -7,7 +7,7 @@
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",
-            "cStandard": "c23",
+            "cStandard": "gnu17",
             "cppStandard": "c++14",
             "intelliSenseMode": "gcc-x64"
         }

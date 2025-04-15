@@ -63,7 +63,12 @@ static i32 vertex(graph_t g, i32 name) {
     assert(g->nvertices > 0);
 
     i32* ptr = bsearch(&name, g->names, g->nvertices, sizeof(i32), cmp_i32);
-    return (ptr == NULL) ? -1 : *ptr;
+    assert(ptr != NULL);
+
+    i32 v = (i32) (ptr - g->names);
+    assert(0 <= v && v < g->nvertices);
+
+    return v;
 }
 
 static void graph_populate_degrees(graph_t g, i32* edges) {

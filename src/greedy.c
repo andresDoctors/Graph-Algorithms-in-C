@@ -3,7 +3,7 @@
 #include <assert.h>
 #include <omp.h>
 
-#include "algorithms.h"
+#include "graph.h"
 
 
 #define bit(n) ((u64) 1 << (n))
@@ -59,22 +59,6 @@ static i32 maximum_i32(const i32* ARR, i32 n) {
     return max;
 }
 
-/**
- * For each vertex `v` being processed, a bitmap is used to track the colors
- * already assigned to its neighbors. Specifically, the bit at position `i` 
- * is set if and only if vertex `v` has at least one neighbor with color `i`.
- * 
- * @param g The graph to be colored.
- * 
- * @param ORDER An array of length `g->nvertices`, containing a permutation of
- *        vertex indices (from 0 to `g->nvertices - 1`) that specifies the order 
- *        in which the vertices are processed.
- * 
- * @param colors An array of length `g->nvertices`, allocated by the caller,
- *        which will store the assigned colors (ranging from 1 to `g->Delta + 1`).
- * 
- * @return The maximum color used in the coloring process.
- */
 i32 greedy(graph_t g, const i32* ORDER, i32* colors) {
     for (i32 i = 0; i < g->nvertices; i++)
         assert(0 <= ORDER[i] && ORDER[i] < g->nvertices);
@@ -86,13 +70,14 @@ i32 greedy(graph_t g, const i32* ORDER, i32* colors) {
         i32 v = ORDER[i];
         bitarray_clear(neighbor_colors_bitmap, degree(g, v) + 3);
 
-        #pragma omp parallel for
+        // #pragma omp parallel for
         for(i32 j = 0; j < degree(g, v); j++) {
             i32 w = neighbor(g, v, j);
             bitarray_set(neighbor_colors_bitmap, colors[w]);
-            printf("Thread %d: i = %d\n", omp_get_thread_num(), i);
+            // printf("Thread %d: i = %d\n", omp_get_thread_num(), i);
         }
 
+        bitarray_set(neighbor_colors_bitmap, 0);
         colors[v] = bits_find_first_zero(neighbor_colors_bitmap);
     }
 

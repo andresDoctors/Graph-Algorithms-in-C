@@ -7,15 +7,15 @@
             "command": "gcc",
             "args": [
                 "-g",
-                "dict.c",
-                "graph.c",
-                "graph_io.c",
-                "main.c",
-                "names.c",
-                "stack.c",
-                "vertex.c",
+                "-Wall",
+                "-Wextra",
+                "-std=gnu17",
+                "src/greedy.c",
+                "src/graph_io.c",
+                "src/graph.c",
+                "src/main.c",
                 "-o",
-                "program.exe"
+                "main"
             ],
             "group": {
                 "kind": "build",

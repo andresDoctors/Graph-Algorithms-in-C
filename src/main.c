@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "src/graph.algorithms/algorithms.h"
-#include "src/graph.h"
+#include "greedy.h"
+#include "graph.h"
 
 int main(void) {
     graph_t g = graph_new(stdin);

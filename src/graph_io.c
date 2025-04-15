@@ -12,7 +12,7 @@ static void ignore_comment_lines(FILE* STREAM) {
 
     do {
         char* error1 = fgets(line, sizeof(line), STREAM);
-        assert(!error1);
+        assert(error1);
     } while(line[0] == 'c');
     
     i32 error2 = fseek(STREAM, -strlen(line), SEEK_CUR);
@@ -26,7 +26,7 @@ static void scan_order_and_size(FILE* STREAM, i32* ptr_nvertices, i32* ptr_nedge
     assert(ptr_nvertices);
     assert(ptr_nedges);
 
-    const char TEMPLATE[] = "p " i32_SCN " " i32_SCN;
+    const char TEMPLATE[] = "p edge " i32_SCN " " i32_SCN;
     i32 nassignments = fscanf(STREAM, TEMPLATE, ptr_nvertices, ptr_nedges);
 
     assert(nassignments == 2);
@@ -39,7 +39,7 @@ static void scan_edges(FILE* STREAM, i32* edges, i32 nedges) {
 
     for(i32 i = 0; i < nedges; i++) {
         i32 name1, name2, nassignments;
-        const char TEMPLATE[] = "e " i32_SCN " " i32_SCN;
+        const char TEMPLATE[] = "\ne " i32_SCN " " i32_SCN;
 
         nassignments = fscanf(STREAM, TEMPLATE, &name1, &name2);
         assert(nassignments == 2);

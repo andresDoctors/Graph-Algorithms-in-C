@@ -1,10 +1,15 @@
 #include <stdlib.h>
 #include <string.h>
+#include <assert.h>
+#include <omp.h>
 
 #include "algorithms.h"
 
 
-static u64* bits_new(i32 nbits) {
+#define bit(n) ((u64) 1 << (n))
+
+
+static u64* bitarray_new(i32 nbits) {
     assert(nbits > 0);
 
     i32 nwords = (nbits + 63) / 64;
@@ -13,7 +18,7 @@ static u64* bits_new(i32 nbits) {
     return bits;
 }
 
-static void bits_clear(u64* bits, i32 nbits) {
+static void bitarray_clear(u64* bits, i32 nbits) {
     assert(bits);
     assert(nbits > 0);
 
@@ -21,72 +26,79 @@ static void bits_clear(u64* bits, i32 nbits) {
     memset(bits, 0x00, nwords*sizeof(u64));
 }
 
-static void bits_set(u64* bits, i32 i) {
+static void bitarray_set(u64* bits, i32 i) {
     assert(bits);
     assert(i >= 0);
 
-    bits[i / 64] |= (1ULL << (i % 64));
-}
-
-/* should be compiled using no loops, but bsr assembly instruction */
-static i32 least_significant_set_bit(u64 word) {
-    assert(word != 0);
-
-    i32 i = 0;
-    while(word >>= 1) i++;
-
-    assert(0 <= i && i < 64);
-    return i;
+    bits[i / 64] |= bit(i % 64);
 }
 
 /* Finds the smallest non-negative integer `i` such that:
- * - `bits_set(bits, i)` has not been called (i.e., the bit at position `i` is not set). */
-static i32 bits_first_not_set(u64* bits) {
-    assert(bits);
+ * - `bitarray_set(bits, i)` has not been called (i.e., the bit at position `i` is not set). */
+static i32 bits_find_first_zero(const u64* BITS) {
+    assert(BITS);
 
-    i32 i = 0;
-    while(bits[i] == u64_MAX) i++;
-    i32 j = least_significant_set_bit(~bits[i]);
+    i32 i, j;
+    for(i = 0; BITS[i] == u64_MAX; i++);
+    j = __builtin_ctzll(~BITS[i]);
 
     return 64*i + j;
 }
 
-static i32 maximum_i32(i32* arr, i32 n) {
-    assert(arr);
+static i32 maximum_i32(const i32* ARR, i32 n) {
+    assert(ARR);
     assert(n > 0);
 
-    i32 max = arr[0];
+    i32 max = ARR[0];
     for(i32 i = 1; i < n; i++) {
-        if(arr[i] > max) {
-            max = arr[i];
+        if(ARR[i] > max) {
+            max = ARR[i];
         }
     }
 
     return max;
 }
 
-i32 greedy(graph_t g, i32* order, i32* colors) {
+/**
+ * For each vertex `v` being processed, a bitmap is used to track the colors
+ * already assigned to its neighbors. Specifically, the bit at position `i` 
+ * is set if and only if vertex `v` has at least one neighbor with color `i`.
+ * 
+ * @param g The graph to be colored.
+ * 
+ * @param ORDER An array of length `g->nvertices`, containing a permutation of
+ *        vertex indices (from 0 to `g->nvertices - 1`) that specifies the order 
+ *        in which the vertices are processed.
+ * 
+ * @param colors An array of length `g->nvertices`, allocated by the caller,
+ *        which will store the assigned colors (ranging from 1 to `g->Delta + 1`).
+ * 
+ * @return The maximum color used in the coloring process.
+ */
+i32 greedy(graph_t g, const i32* ORDER, i32* colors) {
     for (i32 i = 0; i < g->nvertices; i++)
-        assert(0 <= order[i] && order[i] < g->nvertices);
+        assert(0 <= ORDER[i] && ORDER[i] < g->nvertices);
 
-    u64* marked_colors = bits_new(g->Delta + 2);
     memset(colors, 0x00, g->nvertices*sizeof(i32));
+    u64* neighbor_colors_bitmap = bitarray_new(g->Delta + 3);
 
     for(i32 i = 0; i < g->nvertices; i++) {
-        i32 v = order[i];
-        bits_clear(marked_colors, degree(g, v) + 2);
+        i32 v = ORDER[i];
+        bitarray_clear(neighbor_colors_bitmap, degree(g, v) + 3);
 
+        #pragma omp parallel for
         for(i32 j = 0; j < degree(g, v); j++) {
             i32 w = neighbor(g, v, j);
-            bits_set(marked_colors, colors[w]);
+            bitarray_set(neighbor_colors_bitmap, colors[w]);
+            printf("Thread %d: i = %d\n", omp_get_thread_num(), i);
         }
 
-        colors[v] = bits_first_not_set(marked_colors);
+        colors[v] = bits_find_first_zero(neighbor_colors_bitmap);
     }
 
     for (i32 v = 0; v < g->nvertices; v++)
         assert(1 <= colors[v] && colors[v] <= g->Delta + 1);
 
-    free(marked_colors);
+    free(neighbor_colors_bitmap);
     return maximum_i32(colors, g->nvertices);
 }

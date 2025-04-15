@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
+#include <assert.h>
 
 #include "graph.h"
 #include "graph_io.h"
@@ -16,7 +17,7 @@ static graph_t graph_malloc(i32 nvertices) {
     return new_graph;
 }
 
-int cmp_i32(const void* _a_, const void* _b_) {
+static int cmp_i32(const void* _a_, const void* _b_) {
     i32 a = * (i32*) _a_;
     i32 b = * (i32*) _b_;
     return (a > b) - (a < b);

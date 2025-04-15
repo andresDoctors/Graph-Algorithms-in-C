@@ -2,7 +2,7 @@
 #define RANDOM_H
 
 
-#include "../../../types/integers.h"
+#include "../../primitives.h"
 
 
 void srand2(u64 seed);

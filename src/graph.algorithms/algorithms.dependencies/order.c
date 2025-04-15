@@ -4,19 +4,20 @@
 #include "random.h"
 
 
-void order_natural(i32 V, i32* order) {
-    for(i32 i = 0; i < V; i++) order[i] = i;
+void order_natural(i32* order, i32 nvertices) {
+    for(i32 i = 0; i < nvertices; i++)
+        order[i] = i;
 }
 
-void order_random(i32 V, u64 seed, i32* order) {
+void order_random(i32 nvertices, u64 seed, i32* order) {
     order = order;
-    V = V;
+    nvertices = nvertices;
     seed = seed;
 
     /*
     srand2(seed);
 
-    for(i32 i = V - 1; i > 0; i--) {
+    for(i32 i = nvertices - 1; i > 0; i--) {
         i32 j = rand2() % (i + 1);
 
         i32 tmp = order[i];
@@ -37,8 +38,8 @@ static int degree_cmp(const void* p_v1, const void* p_v2) {
 }
 
 void order_descending_degrees(graph_t g, i32* order) {
-    i32 V = number_of_vertices(g);
-    for(i32 i = 0; i < V; i++) order[i] = i;
+    i32 nvertices = number_of_vertices(g);
+    for(i32 i = 0; i < nvertices; i++) order[i] = i;
     g_compared_graph = g;
-    qsort(order, V, sizeof(i32), degree_cmp);
+    qsort(order, nvertices, sizeof(i32), degree_cmp);
 }

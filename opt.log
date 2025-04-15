@@ -1,0 +1,90 @@
+src/graph.algorithms/greedy.c:111:13: optimized:   Inlining printf/42 into greedy._omp_fn.0/61 (always_inline).
+src/graph.algorithms/greedy.c:110:13: note: Considering inline candidate bits_set/56.
+src/graph.algorithms/greedy.c:110:13: optimized:  Inlining bits_set/56 into greedy._omp_fn.0/61.
+src/graph.algorithms/greedy.c:26:5: optimized:   Inlining memset/20 into bits_clear/55 (always_inline).
+src/graph.algorithms/greedy.c:61:13: note: Considering inline candidate find_first_set/57.
+src/graph.algorithms/greedy.c:61:13: optimized:  Inlining find_first_set/57 into bits_find_first_zero/58.
+src/graph.algorithms/greedy.c:100:5: optimized:   Inlining memset/20 into greedy/60 (always_inline).
+src/graph.algorithms/greedy.c:121:12: note: Considering inline candidate maximum_i32/59.
+src/graph.algorithms/greedy.c:121:12: missed:   will not early inline: greedy/60->maximum_i32/59, growth 18 exceeds --param early-inlining-insns
+src/graph.algorithms/greedy.c:114:21: note: Considering inline candidate bits_find_first_zero/58.
+src/graph.algorithms/greedy.c:114:21: missed:   will not early inline: greedy/60->bits_find_first_zero/58, growth 14 exceeds --param early-inlining-insns divided by number of calls
+src/graph.algorithms/greedy.c:105:9: note: Considering inline candidate bits_clear/55.
+src/graph.algorithms/greedy.c:105:9: missed:   will not early inline: greedy/60->bits_clear/55, growth 19 exceeds --param early-inlining-insns
+src/graph.algorithms/greedy.c:101:35: note: Considering inline candidate bits_new/54.
+src/graph.algorithms/greedy.c:101:35: missed:   will not early inline: greedy/60->bits_new/54, growth 10 exceeds --param early-inlining-insns divided by number of calls
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed:   not inlinable: greedy._omp_fn.0/61 -> __printf_chk/68, function body not available
+missed:   not inlinable: greedy._omp_fn.0/61 -> __builtin_omp_get_thread_num/63, function body not available
+missed:   not inlinable: greedy._omp_fn.0/61 -> __builtin_omp_get_num_threads/62, function body not available
+src/graph.algorithms/greedy.c:120:5: missed:   not inlinable: greedy/60 -> free/67, function body not available
+src/graph.algorithms/greedy.c:118:9: missed:   not inlinable: greedy/60 -> __assert_fail/64, function body not available
+missed:   not inlinable: greedy/60 -> __builtin_GOMP_parallel/66, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: greedy/60 -> __builtin___memset_chk/70, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: greedy/60 -> __builtin_object_size/69, function body not available
+src/graph.algorithms/greedy.c:98:9: missed:   not inlinable: greedy/60 -> __assert_fail/64, function body not available
+src/graph.algorithms/greedy.c:68:5: missed:   not inlinable: maximum_i32/59 -> __assert_fail/64, function body not available
+src/graph.algorithms/greedy.c:67:5: missed:   not inlinable: maximum_i32/59 -> __assert_fail/64, function body not available
+src/graph.algorithms/greedy.c:40:13: missed:   not inlinable: bits_find_first_zero/58 -> __builtin_ctzll/75, function body not available
+src/graph.algorithms/greedy.c:49:5: missed:   not inlinable: bits_find_first_zero/58 -> __assert_fail/64, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: bits_clear/55 -> __builtin___memset_chk/70, function body not available
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed:   not inlinable: bits_clear/55 -> __builtin_object_size/69, function body not available
+src/graph.algorithms/greedy.c:23:5: missed:   not inlinable: bits_clear/55 -> __assert_fail/64, function body not available
+src/graph.algorithms/greedy.c:22:5: missed:   not inlinable: bits_clear/55 -> __assert_fail/64, function body not available
+src/graph.algorithms/greedy.c:16:17: missed:   not inlinable: bits_new/54 -> malloc/72, function body not available
+src/graph.algorithms/greedy.c:13:5: missed:   not inlinable: bits_new/54 -> __assert_fail/64, function body not available
+src/graph.algorithms/greedy.c:114:21: optimized:  Inlined bits_find_first_zero/58 into greedy/60 which now has time 1462.555559 and size 97, net change of -6.
+src/graph.algorithms/greedy.c:105:9: optimized:  Inlined bits_clear/55 into greedy/60 which now has time 1519.955997 and size 116, net change of -6.
+src/graph.algorithms/greedy.c:101:35: optimized:  Inlined bits_new/54 into greedy/60 which now has time 1524.852509 and size 126, net change of -6.
+src/graph.algorithms/greedy.c:121:12: optimized:  Inlined maximum_i32/59 into greedy/60 which now has time 1572.907207 and size 144, net change of -7.
+Unit growth for small function inlining: 221->196 (-12%)
+
+Inlined 9 calls, eliminated 6 functions
+
+src/graph.algorithms/greedy.c:109:21: missed: couldn't vectorize loop
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed: statement clobbers memory: __printf_chk (1, "Thread %d: i = %d\n", _19, i_9);
+src/graph.algorithms/greedy.c:107:17: note: vectorized 0 loops in function.
+src/graph.algorithms/greedy.c:109:21: missed: failed: evolution of base is not affine.
+src/graph.algorithms/greedy.c:109:17: missed: failed: evolution of base is not affine.
+src/graph.algorithms/greedy.c:110:13: missed: failed: evolution of base is not affine.
+src/graph.algorithms/greedy.c:33:18: missed: failed: evolution of base is not affine.
+src/graph.algorithms/greedy.c:33:18: missed: failed: evolution of base is not affine.
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed: statement clobbers memory: __printf_chk (1, "Thread %d: i = %d\n", _19, i_9);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:107:10: missed: statement clobbers memory: __printf_chk (1, "Thread %d: i = %d\n", _19, i_9);
+src/graph.algorithms/greedy.c:71:5: optimized: loop vectorized using 32 byte vectors
+src/graph.algorithms/greedy.c:118:9: missed: couldn't vectorize loop
+src/graph.algorithms/greedy.c:118:9: missed: not vectorized: control flow in loop.
+src/graph.algorithms/greedy.c:23:5: missed: couldn't vectorize loop
+src/graph.algorithms/greedy.c:23:5: missed: not vectorized: control flow in loop.
+src/graph.algorithms/greedy.c:60:10: missed: couldn't vectorize loop
+src/graph.algorithms/greedy.c:60:10: missed: not vectorized: number of iterations cannot be computed.
+src/graph.algorithms/greedy.c:98:9: missed: couldn't vectorize loop
+src/graph.algorithms/greedy.c:98:9: missed: not vectorized: control flow in loop.
+src/graph.algorithms/greedy.c:96:5: note: vectorized 1 loops in function.
+src/graph.algorithms/greedy.c:71:5: optimized: loop with 6 iterations completely unrolled (header execution count 14945655)
+src/graph.algorithms/greedy.c:98:9: missed: statement clobbers memory: __assert_fail ("0 <= ORDER[i] && ORDER[i] < g->nvertices", "src/graph.algorithms/greedy.c", 98, &__PRETTY_FUNCTION__);
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed: statement clobbers memory: __builtin_memset (colors_36(D), 0, _8);
+src/graph.algorithms/greedy.c:13:5: missed: statement clobbers memory: __assert_fail ("nbits > 0", "src/graph.algorithms/greedy.c", 13, &__PRETTY_FUNCTION__);
+src/graph.algorithms/greedy.c:16:17: missed: statement clobbers memory: bits_63 = malloc (_62);
+src/graph.algorithms/greedy.c:22:5: missed: statement clobbers memory: __assert_fail ("bits", "src/graph.algorithms/greedy.c", 22, &__PRETTY_FUNCTION__);
+src/graph.algorithms/greedy.c:23:5: missed: statement clobbers memory: __assert_fail ("nbits > 0", "src/graph.algorithms/greedy.c", 23, &__PRETTY_FUNCTION__);
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:71:10: missed: statement clobbers memory: __builtin_memset (bits_63, 0, _79);
+src/graph.algorithms/greedy.c:96:5: missed: statement clobbers memory: __builtin_GOMP_parallel (greedy._omp_fn.0, &.omp_data_o.1, 0, 0);
+src/graph.algorithms/greedy.c:107:17: note: ***** Re-trying analysis with vector size 16
+src/graph.algorithms/greedy.c:96:5: missed: statement clobbers memory: __builtin_GOMP_parallel (greedy._omp_fn.0, &.omp_data_o.1, 0, 0);
+src/graph.algorithms/greedy.c:107:17: note: SLPing BB part
+src/graph.algorithms/greedy.c:107:17: note: ------>vectorizing SLP node starting from: .omp_data_o.1.g = g_35(D);
+src/graph.algorithms/greedy.c:107:17: note: vect_is_simple_use: operand g_35(D), type of def: external
+src/graph.algorithms/greedy.c:107:17: note: vect_is_simple_use: operand colors_36(D), type of def: external
+src/graph.algorithms/greedy.c:107:17: note: conflicting alias set types.
+src/graph.algorithms/greedy.c:107:17: note: transform store. ncopies = 1
+src/graph.algorithms/greedy.c:107:17: note: created new init_stmt: vect_cst__179 = _178;
+src/graph.algorithms/greedy.c:107:17: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.1.g
+src/graph.algorithms/greedy.c:107:17: note: created &.omp_data_o.1.g
+src/graph.algorithms/greedy.c:107:17: note: add new stmt: MEM[(void *)&.omp_data_o.1] = vect_cst__179;
+src/graph.algorithms/greedy.c:107:17: note: vectorizing stmts using SLP.
+src/graph.algorithms/greedy.c:107:17: optimized: basic block part vectorized using 16 byte vectors
+src/graph.algorithms/greedy.c:60:10: note: basic block vectorized
+src/graph.algorithms/greedy.c:118:9: missed: statement clobbers memory: __assert_fail ("1 <= colors[v] && colors[v] <= g->Delta + 1", "src/graph.algorithms/greedy.c", 118, &__PRETTY_FUNCTION__);
+src/graph.algorithms/greedy.c:120:5: missed: statement clobbers memory: free (bits_63);
+src/graph.algorithms/greedy.c:68:5: missed: statement clobbers memory: __assert_fail ("n > 0", "src/graph.algorithms/greedy.c", 68, &__PRETTY_FUNCTION__);
+src/graph.algorithms/greedy.c:120:5: missed: statement clobbers memory: free (bits_63);

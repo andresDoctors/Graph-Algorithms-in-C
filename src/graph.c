@@ -130,10 +130,7 @@ static void graph_populate_neighbors(graph_t g, i32* edges) {
     free(nneighbors);
 }
 
-graph_t graph_new(FILE* STREAM) {
-    i32 nvertices, nedges;
-    i32* edges = scan_graph(STREAM, &nvertices, &nedges);
-
+graph_t graph_new(i32* edges, i32 nvertices, i32 nedges) {
     graph_t g = graph_malloc(nvertices);
     g->nvertices = nvertices;
     g->nedges = nedges;
@@ -142,7 +139,6 @@ graph_t graph_new(FILE* STREAM) {
     graph_populate_neighbors(g, edges);
     g->Delta = maximum_i32(g->degrees, nvertices);
 
-    free(edges);
     return g;
 }
 

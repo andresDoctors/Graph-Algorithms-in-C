@@ -32,6 +32,20 @@ static void scan_order_and_size(FILE* STREAM, i32* ptr_nvertices, i32* ptr_nedge
     assert(nassignments == 2);
 }
 
+static i32 cmp_edges(const void* _edge1_, const void* _edge2_) {
+    i32* edge1 = (i32*) _edge1_;
+    i32* edge2 = (i32*) _edge2_;
+
+    i32 v1 = edge1[0];
+    i32 v2 = edge2[0];
+    if(v1 == v2) {
+        v1 = edge1[1];
+        v2 = edge2[1];
+    }
+
+    return (v1 > v2) - (v1 < v2);
+}
+
 static void scan_edges(FILE* STREAM, i32* edges, i32 nedges) {
     assert(STREAM);
     assert(edges);
@@ -46,6 +60,14 @@ static void scan_edges(FILE* STREAM, i32* edges, i32 nedges) {
 
         edges[2*i]     = name1;
         edges[2*i + 1] = name2;
+    }
+
+    qsort(edges, nedges, 2*sizeof(i32), cmp_edges);
+    for(i32 i = 0; i < nedges - 1; i++) {
+        assert(
+            edges[2*i]     != edges[2*i + 2] ||
+            edges[2*i + 1] != edges[2*i + 3]
+        );
     }
 }
 

@@ -7,7 +7,7 @@ int main(void) {
     printf("short:%lu\n", sizeof(short));
     printf("long:%lu\n", sizeof(long));
     printf("long-long:%lu\n", sizeof(long long));
-    
+
     printf("unsigned-char:%lu\n", sizeof(unsigned char));
     printf("unsigned-short:%lu\n", sizeof(unsigned short));
     printf("unsigned-long:%lu\n", sizeof(unsigned long));

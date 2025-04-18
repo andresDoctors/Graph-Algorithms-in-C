@@ -5,8 +5,8 @@
             "name": "C Debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/main",
-            "args": ["<", "${workspaceFolder}/graphs/A_1515153016_18"],
+            "program": "${workspaceFolder}/build/test_graph",
+            "args": [],
             "stopAtEntry": true,
             "cwd": "${workspaceFolder}",
             "environment": [],
@@ -19,7 +19,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "gcc build active file",
+            // "preLaunchTask": "gcc build active file",
             "miDebuggerPath": "gdb",
         }
     ]

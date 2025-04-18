@@ -6,7 +6,8 @@
 #include "graph.h"
 
 
-#define bit(n) ((u64) 1 << (n))
+#define min(a, b) ((a) < (b) ? (a) : (b))
+#define max(a, b) ((a) > (b) ? (a) : (b))
 
 
 static u64* bitarray_new(i32 nbits) {
@@ -30,7 +31,7 @@ static void bitarray_set(u64* bits, i32 i) {
     assert(bits);
     assert(i >= 0);
 
-    bits[i / 64] |= bit(i % 64);
+    bits[i / 64] |= ((u64) 1 << (i % 64));
 }
 
 /* Finds the smallest non-negative integer `i` such that:
@@ -46,30 +47,18 @@ static i32 bitarray_find_first_zero(const u64* BITS) {
     return 64*i + j;
 }
 
-static i32 maximum_i32(const i32* ARR, i32 n) {
-    assert(ARR);
-    assert(n > 0);
-
-    i32 max = ARR[0];
-    for(i32 i = 1; i < n; i++) {
-        if(ARR[i] > max) {
-            max = ARR[i];
-        }
-    }
-
-    return max;
-}
-
 i32 greedy(graph_t g, const i32* ORDER, i32* colors) {
-    for (i32 i = 0; i < g->nvertices; i++)
-        assert(0 <= ORDER[i] && ORDER[i] < g->nvertices);
+    for (i32 i = 0; i < nvertices(g); i++)
+        assert(0 <= ORDER[i] && ORDER[i] < nvertices(g));
 
-    memset(colors, 0x00, g->nvertices*sizeof(i32));
-    u64* neighbor_colors_bitmap = bitarray_new(g->Delta + 3);
+    i32 chi = 0;
+    memset(colors, 0x00, nvertices(g)*sizeof(i32));
+    u64* neighbor_colors_bitmap = bitarray_new(delta(g) + 2);
 
-    for(i32 i = 0; i < g->nvertices; i++) {
+    for(i32 i = 0; i < nvertices(g); i++) {
         i32 v = ORDER[i];
-        bitarray_clear(neighbor_colors_bitmap, degree(g, v) + 3);
+        i32 v_color_upper_bound = min(degree(g, v) + 1, chi + 1);
+        bitarray_clear(neighbor_colors_bitmap, v_color_upper_bound + 1);
 
         #pragma omp parallel for
         for(i32 j = 0; j < degree(g, v); j++) {
@@ -79,11 +68,12 @@ i32 greedy(graph_t g, const i32* ORDER, i32* colors) {
 
         bitarray_set(neighbor_colors_bitmap, 0);
         colors[v] = bitarray_find_first_zero(neighbor_colors_bitmap);
+        chi = max(chi, colors[v]);
     }
 
-    for (i32 v = 0; v < g->nvertices; v++)
-        assert(1 <= colors[v] && colors[v] <= g->Delta + 1);
+    for (i32 v = 0; v < nvertices(g); v++)
+        assert(1 <= colors[v] && colors[v] <= chi && chi <= delta(g) + 1);
 
     free(neighbor_colors_bitmap);
-    return maximum_i32(colors, g->nvertices);
+    return chi;
 }

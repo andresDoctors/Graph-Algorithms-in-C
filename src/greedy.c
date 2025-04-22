@@ -6,8 +6,8 @@
 #include "graph.h"
 
 
-#define min(a, b) ((a) < (b) ? (a) : (b))
-#define max(a, b) ((a) > (b) ? (a) : (b))
+#define min(a, b) ((a) <= (b) ? (a) : (b))
+#define max(a, b) ((a) >= (b) ? (a) : (b))
 
 
 static u64* bitarray_new(i32 nbits) {

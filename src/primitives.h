@@ -21,20 +21,20 @@ typedef double f64;
 typedef long double f128;
 
 
-#define i08_MAX 0x7F
-#define i16_MAX 0x7FFF
-#define i32_MAX 0x7FFFFFFF
-#define i64_MAX 0x7FFFFFFFFFFFFFFF
+#define i08_MAX (i08) 0x7F
+#define i16_MAX (i16) 0x7FFF
+#define i32_MAX (i32) 0x7FFFFFFF
+#define i64_MAX (i64) 0x7FFFFFFFFFFFFFFF
 
-#define i08_MIN 0x80
-#define i16_MIN 0x8000
-#define i32_MIN 0x80000000
-#define i64_MIN 0x8000000000000000
+#define i08_MIN (i08) 0x80
+#define i16_MIN (i16) 0x8000
+#define i32_MIN (i32) 0x80000000
+#define i64_MIN (i64) 0x8000000000000000
 
-#define u08_MAX 0xFF
-#define u16_MAX 0xFFFF
-#define u32_MAX 0xFFFFFFFF
-#define u64_MAX 0xFFFFFFFFFFFFFFFF
+#define u08_MAX (u08) 0xFF
+#define u16_MAX (u16) 0xFFFF
+#define u32_MAX (u32) 0xFFFFFFFF
+#define u64_MAX (u64) 0xFFFFFFFFFFFFFFFF
 
 #define i08_PRI "%" PRId8
 #define i16_PRI "%" PRId16

@@ -26,6 +26,9 @@ test_graph_io: graph_io.o graph.o greedy.o random.o utils.o
 test_graph: graph_io.o graph.o greedy.o random.o utils.o
 	$(COMPILER) $(WARNINGS) $(OPTIMIZE) $(DEBUG) $(BIN_MODULES) unity/unity.c test/test_graph.c -o build/test_graph
 
+normalize_graphs: normalize_graphs.o utils.o
+	$(COMPILER) $(WARNINGS) $(OPTIMIZE) $(DEBUG) build/normalize_graphs.o build/utils.o -o build/normalize_graphs
+
 graph_io.o:
 	$(COMPILER) $(WARNINGS) $(OPTIMIZE) $(DEBUG) -c src/graph_io.c -o build/graph_io.o
 
@@ -40,3 +43,6 @@ random.o:
 
 utils.o:
 	$(COMPILER) $(WARNINGS) $(OPTIMIZE) $(DEBUG) -c test/utils.c -o build/utils.o
+
+normalize_graphs.o:
+	$(COMPILER) $(WARNINGS) $(OPTIMIZE) $(DEBUG) -c test/normalize_graphs.c -o build/normalize_graphs.o

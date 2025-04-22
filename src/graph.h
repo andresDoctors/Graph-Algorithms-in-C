@@ -2,7 +2,6 @@
 #define GRAPH_H
 
 
-#include <stdio.h>
 #include "primitives.h"
 
 
@@ -12,14 +11,15 @@ typedef struct GraphSt {
     i32 Delta;
     i32* degrees;
     i32** neighbors;
-    i32* names;
+    u32* names;
 } GraphSt;
 
 typedef GraphSt* graph_t;
 
 
-graph_t graph_new(i32* edges, i32 nvertices, i32 nedges);
+graph_t graph_new(u32* edges, i32 nvertices, i32 nedges);
 void graph_destroy(graph_t g);
+i32 graph_to_edges(u32* dst, graph_t g);
 
 
 #define nvertices(g)      (g)->nvertices

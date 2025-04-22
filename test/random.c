@@ -69,15 +69,15 @@ void random_array(void* arr, i32 n, i32 size, u64 a, u64 b) {
     }
 }
 
-void random_edges(i32* edges, i32 nvertices, i32 nedges) {
+void random_edges(u32* edges, i32 nvertices, i32 nedges) {
     assert(edges);
     assert(nvertices > 0);
     assert(nedges > 0);
 
-    random_array(edges, 2*nedges, sizeof(i32), 0, nvertices);
+    random_array(edges, 2*nedges, sizeof(u32), 0, nvertices);
 
-    i32* names = malloc(nvertices*sizeof(i32));
-    random_array(names, nvertices, sizeof(i32), 0, i32_MAX);
+    u32* names = malloc(nvertices*sizeof(u32));
+    random_array(names, nvertices, sizeof(u32), 0, u32_MAX);
 
     for (i32 i = 0; i < 2*nedges; i++)
         edges[i] = names[edges[i]];

@@ -5,7 +5,7 @@
             "name": "C Debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/test_graph",
+            "program": "${workspaceFolder}/build/test_graph_io",
             "args": [],
             "stopAtEntry": true,
             "cwd": "${workspaceFolder}",
